@@ -20,12 +20,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dp">
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.google.android.gms.maps.MapView>
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/map"
+            tools:context=".MapsActivity"
+            android:name="com.google.android.gms.maps.SupportMapFragment" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -135,14 +136,17 @@
             android:text="ON-OFF AUTO"
             android:layout_alignLeft="@+id/tv_mode_and_switch"
             android:layout_alignStart="@+id/tv_mode_and_switch"
+            android:layout_marginTop="8dp"
             />
         <Button
             android:id="@+id/bt_on"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/bt_off"
+            android:layout_toStartOf="@+id/bt_off"
             android:layout_alignBottom="@+id/bt_on_off_auto"
             android:text="ON"
+            android:layout_alignTop="@+id/bt_on_off_auto"
             android:layout_marginLeft="14dp"
             android:layout_marginStart="14dp"
             />
@@ -153,6 +157,7 @@
             android:layout_alignBottom="@+id/bt_on"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/bt_on"
             android:layout_marginLeft="14dp"
             android:layout_marginStart="14dp"
             android:layout_marginRight="14dp"

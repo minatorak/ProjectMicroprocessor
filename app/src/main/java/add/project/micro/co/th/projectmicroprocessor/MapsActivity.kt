@@ -9,6 +9,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.CameraPosition
+
+
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -29,7 +32,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val imstay = LatLng(13.905869, 100.529626)
         mMap.addMarker(MarkerOptions().position(imstay).title("Marker in Thailand"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(imstay))
-        mMap.setMaxZoomPreference(6.0f)
-        mMap.setMinZoomPreference(14.0f)
+        mMap.animateCamera(CameraUpdateFactory.zoomIn())
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(10F), 2000, null)
+
     }
 }
