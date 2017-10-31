@@ -39,5 +39,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val imstay = LatLng(13.905869, 100.529626)
         mMap.addMarker(MarkerOptions().position(imstay).title("Marker in Thailand"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(imstay))
+        mMap.setMaxZoomPreference(6.0f)
+        mMap.setMinZoomPreference(14.0f)
     }
 }
