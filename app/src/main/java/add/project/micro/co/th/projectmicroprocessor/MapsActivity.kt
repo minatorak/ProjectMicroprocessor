@@ -16,6 +16,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private lateinit var tvlatitude: TextView
     private lateinit var tvlongtitude: TextView
+    private val imstay: LatLng
+        get() = LatLng(latitude, longtitude)
+    val latitude = 13.905869
+    val longtitude = 100.529626
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,18 +33,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         tvlatitude.text = latitude.toString()
         tvlongtitude.text = longtitude.toString()
     }
-    val latitude = 13.905869
-    val longtitude = 100.529626
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        val latitude = 13.905869
-        val longtitude = 100.529626
         // Add a marker in Sydney and move the camera
-        val imstay = LatLng(latitude, longtitude)
         mMap.addMarker(MarkerOptions().position(imstay).title("Marker in Thailand"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(imstay))
-        mMap.animateCamera(CameraUpdateFactory.zoomIn())
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(latitude, longtitude), 14.0f))
 
     }
