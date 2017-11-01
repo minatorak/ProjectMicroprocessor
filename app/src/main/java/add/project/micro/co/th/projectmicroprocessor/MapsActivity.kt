@@ -41,7 +41,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(MarkerOptions().position(imstay).title("Marker in Thailand"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(imstay))
         mMap.animateCamera(CameraUpdateFactory.zoomIn())
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(10F), 2000, null)
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(latitude, longtitude), 14.0f))
 
     }
 }
