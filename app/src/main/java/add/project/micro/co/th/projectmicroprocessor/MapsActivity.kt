@@ -18,20 +18,24 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var tvlongtitude: TextView
     private val imstay: LatLng
         get() = LatLng(latitude, longtitude)
-    val latitude = 13.905869
-    val longtitude = 100.529626
+    private val latitude = 13.905869
+    private val longtitude = 100.529626
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
-        val mapFragment = supportFragmentManager
-                .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+        mapInit()
         tvlatitude = findViewById(R.id.tv_lati)
         tvlongtitude = findViewById(R.id.tv_longti)
 
         tvlatitude.text = latitude.toString()
         tvlongtitude.text = longtitude.toString()
+    }
+
+    private fun mapInit() {
+        val mapFragment = supportFragmentManager
+                .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
