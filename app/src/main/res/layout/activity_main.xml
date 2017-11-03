@@ -22,11 +22,21 @@
                 android:id="@+id/tv_washing_machine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="เครื่องซักผ้า"
+                android:text="เครื่องซักผ้าเครื่องที่"
                 android:textSize="14sp"
                 android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp"
                 android:layout_toRightOf="@+id/im_photo"
                 android:layout_toEndOf="@+id/im_photo"/>
+            <TextView
+                android:id="@+id/tv_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:layout_toLeftOf="@+id/im_next"
+                android:layout_marginRight="14dp"
+                android:layout_marginEnd="14dp"
+                />
             <TextView
                 android:id="@+id/tv_status"
                 android:layout_width="wrap_content"
@@ -37,6 +47,16 @@
                 android:layout_alignLeft="@+id/tv_washing_machine"
                 android:layout_alignStart="@id/tv_washing_machine" />
             <TextView
+                android:id="@+id/tv_status_free"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="วาง"
+                android:layout_below="@+id/tv_order"
+                android:layout_alignRight="@+id/tv_order"
+                android:layout_alignEnd="@+id/tv_order"
+                android:layout_alignBottom="@+id/tv_status"
+                />
+            <TextView
                 android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,6 +65,36 @@
                 android:layout_below="@+id/tv_status"
                 android:layout_alignStart="@+id/tv_status"
                 android:layout_alignLeft="@+id/tv_status"
+                />
+            <TextView
+                android:id="@+id/tv_minute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="นาที"
+                android:layout_below="@+id/tv_status_free"
+                android:layout_alignRight="@+id/tv_status_free"
+                android:layout_alignEnd="@+id/tv_status_free"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60"
+                android:layout_toLeftOf="@+id/tv_minute"
+                android:layout_toStartOf="@+id/tv_minute"
+                android:layout_alignBottom="@+id/tv_minute"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                />
+            <ImageView
+                android:id="@+id/im_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp"
+                android:contentDescription="@null"
                 />
 
         </RelativeLayout>
