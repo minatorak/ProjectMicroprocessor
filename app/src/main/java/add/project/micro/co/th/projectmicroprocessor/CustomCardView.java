@@ -6,9 +6,6 @@ import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 
-/**
- * Created by add on 4/11/2560.
- */
 
 public class CustomCardView extends CardView {
     TypedValue outValue;
