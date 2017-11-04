@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
-        tools:listitem="@layout/list_view_row">
+        tools:listitem="@layout/my_text_view">
 
     </add.project.micro.co.th.projectmicroprocessor.CustomRecyclerView>
 </RelativeLayout>
