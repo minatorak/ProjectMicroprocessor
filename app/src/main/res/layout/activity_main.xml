@@ -6,13 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <add.project.micro.co.th.projectmicroprocessor.CustomSwipeRefresh
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <add.project.micro.co.th.projectmicroprocessor.CustomRecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        tools:listitem="@layout/my_text_view">
+        android:layout_marginBottom="8dp"
+        tools:listitem="@layout/my_text_view"/>
+    </add.project.micro.co.th.projectmicroprocessor.CustomSwipeRefresh>
 
-    </add.project.micro.co.th.projectmicroprocessor.CustomRecyclerView>
 </RelativeLayout>
