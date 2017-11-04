@@ -1,36 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<add.project.micro.co.th.projectmicroprocessor.CustomCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="0.5dp"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp">
 
         <ImageView
-            android:id="@+id/itemImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            android:layout_weight="3"
-            android:adjustViewBounds="true" />
-
+            android:id="@+id/im_washing"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@mipmap/ic_free"/>
         <TextView
-            android:id="@+id/itemDate"
+            android:id="@+id/tv_order_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|start"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            tools:text="Some date" />
-
+            android:text="1"
+            android:layout_toRightOf="@+id/im_washing"
+            android:layout_toEndOf="@+id/im_washing"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp" />
         <TextView
-            android:id="@+id/itemDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|start"
-            android:layout_weight="1"
-            android:ellipsize="end"
-            android:maxLines="5" />
-    </LinearLayout>
+            android:text="status"
+            android:layout_toRightOf="@+id/im_washing"
+            android:layout_toEndOf="@+id/im_washing"
+            android:layout_below="@+id/tv_order_number"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp" />
+        <ImageView
+            android:id="@+id/icon_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_arrow_right"
+            android:tint="@color/warmGrey"
+            />
+
+    </RelativeLayout>
+
+    </add.project.micro.co.th.projectmicroprocessor.CustomCardView>
