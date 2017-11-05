@@ -12,7 +12,7 @@
                 android:id="@+id/im_photo"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@mipmap/ic_free" />
+                android:src="@drawable/ic_washing_machine" />
             <TextView
                 android:id="@+id/tv_washing_machine"
                 android:layout_width="wrap_content"

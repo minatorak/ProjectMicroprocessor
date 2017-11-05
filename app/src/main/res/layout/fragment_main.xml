@@ -6,17 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".MainFragment">
 
-    <add.project.micro.co.th.projectmicroprocessor.CustomSwipeRefresh
-        android:id="@+id/swipeRefresh"
+    <ImageView
+        android:id="@+id/image_washing"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <add.project.micro.co.th.projectmicroprocessor.CustomRecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="8dp"
-            tools:listitem="@layout/my_text_view"/>
-    </add.project.micro.co.th.projectmicroprocessor.CustomSwipeRefresh>
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_washing_machine" />
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status : "
+        android:layout_below="@+id/image_washing"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:textSize="14sp"
+        />
+    <TextView
+        android:id="@+id/tv_real_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="free"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_toRightOf="@+id/tv_status"
+        android:layout_toEndOf="@+id/tv_status"
+        android:layout_alignBottom="@+id/tv_status" />
+    <TextView
+        android:id="@+id/tv_Left_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left time :"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/tv_status"
+        android:layout_alignLeft="@+id/tv_status"
+        android:layout_alignStart="@+id/tv_status" />
+    <TextView
+        android:id="@+id/tv_real_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="60"
+        android:layout_toRightOf="@+id/tv_Left_time"
+        android:layout_toEndOf="@+id/tv_Left_time"
+        android:layout_alignBottom="@+id/tv_Left_time"
+        android:layout_alignLeft="@+id/tv_real_status"
+        android:layout_alignStart="@+id/tv_real_status" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="minute"
+        android:layout_toRightOf="@+id/tv_real_time"
+        android:layout_toEndOf="@+id/tv_real_time"
+        android:layout_alignBottom="@+id/tv_real_time"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        />
 
 </RelativeLayout>

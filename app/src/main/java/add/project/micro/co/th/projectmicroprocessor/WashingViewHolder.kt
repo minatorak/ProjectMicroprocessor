@@ -10,6 +10,7 @@ import butterknife.ButterKnife
 class WashingViewHolder(view : View) : RecyclerView.ViewHolder(view) {
     @BindView(R.id.tv_order_number) lateinit var tvOrderNumber : TextView
     @BindView(R.id.tv_status) lateinit var tvStatus : TextView
+    @BindView(R.id.cardview_washing) lateinit var cardView : CardView
 
     init {
         ButterKnife.bind(this, view)
