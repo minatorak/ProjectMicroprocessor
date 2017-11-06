@@ -1,7 +1,7 @@
 package add.project.micro.co.th.projectmicroprocessor
 
 
-import android.graphics.Color
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.annotation.Nullable
 import android.support.v4.app.Fragment
@@ -17,6 +17,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.util.*
 
 
 class MainFragment : Fragment() {
@@ -24,7 +25,6 @@ class MainFragment : Fragment() {
     var logR = baseR.child("log")
     var positionR = baseR.child("position")
     var statusR = baseR.child("status")
-    var values: ArrayList<ModelMapper?> = ArrayList()
     @Nullable @BindView(R.id.image_washing) lateinit var imageView : ImageView
     @Nullable @BindView(R.id.tv_real_time) lateinit var LeftTime : TextView
     @Nullable @BindView(R.id.tv_real_status) lateinit var Status : TextView
@@ -40,16 +40,25 @@ class MainFragment : Fragment() {
 
     private fun dataLog() {
         logR.addValueEventListener(object : ValueEventListener {
+            @SuppressLint("SetTextI18n")
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val datatime  = dataSnapshot.child("count").value
-                LeftTime.text = datatime.toString()
-
-
+                val datetime  = dataSnapshot.child("dateStart").getValue(Long::class.java)
+                val calendar = Calendar.getInstance()
+                val calendar2 = Calendar.getInstance()
+                calendar.timeInMillis = datetime!! + 3600000
+                val mHourAfter = calendar2.get(Calendar.HOUR)
+                val mMinuteAfter = calendar2.get(Calendar.MINUTE)
+                val mSecondAfter = calendar2.get(Calendar.SECOND)
+                val mHourBefore = calendar.get(Calendar.HOUR)
+                val mMinuteBefore = calendar.get(Calendar.MINUTE)
+                val mSecondBefore = calendar.get(Calendar.SECOND)
+                val timeMi = calendar2.timeInMillis
+               val xxxx= (calendar.timeInMillis-timeMi)
+                calendar.timeInMillis=xxxx
+                 LeftTime.text = calendar.get(Calendar.MINUTE).toString()
             }
 
             override fun onCancelled(error: DatabaseError) {
-
-
             }
         })
 
@@ -70,8 +79,6 @@ class MainFragment : Fragment() {
 
             }
             override fun onCancelled(error: DatabaseError) {
-
-
             }
         })
 
