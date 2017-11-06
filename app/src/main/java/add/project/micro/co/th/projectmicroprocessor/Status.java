@@ -5,33 +5,15 @@ import java.util.Map;
 
 public class Status {
 
-    private Log log;
-    private Position position;
-    private Status status;
+    private Integer running;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public Log getLog() {
-        return log;
+    public Integer getRunning() {
+        return running;
     }
 
-    public void setLog(Log log) {
-        this.log = log;
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setRunning(Integer running) {
+        this.running = running;
     }
 
     public Map<String, Object> getAdditionalProperties() {
