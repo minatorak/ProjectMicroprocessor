@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainFragment">
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
         android:id="@+id/tv_topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dorm Washing Machine"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:id="@+id/image_washing"
@@ -24,11 +26,11 @@
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Status : "
+        android:text="Status :  "
         android:layout_below="@+id/image_washing"
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
-        android:textSize="14sp"
+        android:textSize="22sp"
         />
     <TextView
         android:id="@+id/tv_real_status"
@@ -39,7 +41,8 @@
         android:layout_marginStart="18dp"
         android:layout_toRightOf="@+id/tv_status"
         android:layout_toEndOf="@+id/tv_status"
-        android:layout_alignBottom="@+id/tv_status" />
+        android:layout_alignBottom="@+id/tv_status"
+        android:textSize="22sp"/>
     <TextView
         android:id="@+id/tv_Left_time"
         android:layout_width="wrap_content"
@@ -48,7 +51,8 @@
         android:layout_marginTop="14dp"
         android:layout_below="@+id/tv_status"
         android:layout_alignLeft="@+id/tv_status"
-        android:layout_alignStart="@+id/tv_status" />
+        android:layout_alignStart="@+id/tv_status"
+        android:textSize="22sp"/>
     <TextView
         android:id="@+id/tv_real_time"
         android:layout_width="wrap_content"
@@ -58,7 +62,9 @@
         android:layout_toEndOf="@+id/tv_Left_time"
         android:layout_alignBottom="@+id/tv_Left_time"
         android:layout_alignLeft="@+id/tv_real_status"
-        android:layout_alignStart="@+id/tv_real_status" />
+        android:layout_alignStart="@+id/tv_real_status"
+        android:textSize="22sp"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,12 +73,8 @@
         android:layout_toEndOf="@+id/tv_real_time"
         android:layout_alignBottom="@+id/tv_real_time"
         android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-
-        />
+        android:layout_marginStart="8dp"
+        android:textSize="22sp"/>p
 
 </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
