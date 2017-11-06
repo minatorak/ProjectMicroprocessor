@@ -1,9 +1,11 @@
 package add.project.micro.co.th.projectmicroprocessor
 
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.annotation.Nullable
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +25,7 @@ class MainFragment : Fragment() {
     var positionR = baseR.child("position")
     var statusR = baseR.child("status")
     var values: ArrayList<ModelMapper?> = ArrayList()
-    @Nullable @BindView(R.id.im_washing) lateinit var imageView : ImageView
+    @Nullable @BindView(R.id.image_washing) lateinit var imageView : ImageView
     @Nullable @BindView(R.id.tv_real_time) lateinit var LeftTime : TextView
     @Nullable @BindView(R.id.tv_real_status) lateinit var Status : TextView
 
@@ -58,9 +60,12 @@ class MainFragment : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val status = dataSnapshot.child("running").value
                 if (status.toString().equals("0") ) {
+                    imageView.setColorFilter(ContextCompat.getColor(context, R.color.green))
                     Status.text = "free"
                 }else {
+                    imageView.setColorFilter(ContextCompat.getColor(context, R.color.red))
                     Status.text = "running"
+
                 }
 
             }
