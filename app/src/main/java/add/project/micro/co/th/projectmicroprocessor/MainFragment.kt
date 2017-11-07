@@ -33,7 +33,6 @@ class MainFragment : Fragment() {
     var logR = baseR.child("log")
     var positionR = baseR.child("position")
     var statusR = baseR.child("status")
-    var intervalTime =""
     @Nullable @BindView(R.id.image_washing) lateinit var imageView : ImageView
     @Nullable @BindView(R.id.tv_real_time) lateinit var leftTime: TextView
     @Nullable @BindView(R.id.tv_real_status) lateinit var status: TextView

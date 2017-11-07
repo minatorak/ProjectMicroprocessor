@@ -13,18 +13,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         ButterKnife.bind(this)
 
-
         initFragment()
 
     }
     fun initFragment() {
         supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
+                .replace(R.id.container, SecondFragment.newInstance())
                 .commit()
     }
     fun changeFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
+                .replace(R.id.container, SecondFragment.newInstance())
                 .addToBackStack(null)
                 .commit()
     }
