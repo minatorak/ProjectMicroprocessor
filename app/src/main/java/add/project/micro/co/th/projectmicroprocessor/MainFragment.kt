@@ -65,11 +65,8 @@ class MainFragment : Fragment() {
         logR.addValueEventListener(object : ValueEventListener {
             @SuppressLint("SetTextI18n")
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val datetime  = dataSnapshot.child("dateStart").getValue(Long::class.java)
-                val calendar = Calendar.getInstance()
-                calendar.timeInMillis = datetime!!
-                 intervalTime = calendar.get(Calendar.MINUTE).toString()
-                leftTime.text = intervalTime
+                val count = dataSnapshot.child("countDown").getValue(Int::class.java)
+                leftTime.text = count.toString()
 
             }
 
