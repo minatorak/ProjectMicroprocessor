@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/rela_layout"
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondFragment">
+<LinearLayout
+    android:id="@+id/rela_layout"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".SecondFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/tv_weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="สถาพอากาศวันนี้"
+        android:text="สภาพอากาศวันนี้"
         android:layout_gravity="center_horizontal"
         android:textSize="22sp"
         android:layout_marginTop="12dp"
-        />
+        android:layout_marginBottom="14dp"
+        android:textStyle="bold" />
     <ImageView
         android:id="@+id/im_weather"
         android:layout_below="@+id/tv_weather"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:src="@drawable/ic_weather"
         android:layout_gravity="center_horizontal"/>
     <TextView
@@ -29,9 +34,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="อากาศดี"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="14dp"
         android:layout_gravity="center_horizontal"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:layout_marginBottom="14dp" />
     <TextView
         android:id="@+id/tv_status_weather"
         android:layout_width="wrap_content"
@@ -39,52 +45,161 @@
         android:text="เหมาะกับการซักผ้าเป็นอย่างยิ่ง"
         android:layout_gravity="center_horizontal"
         android:textSize="18sp"/>
+
     <LinearLayout
-        android:id="@+id/layout_linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="14dp">
+
+    <LinearLayout
+        android:id="@+id/layout_linear"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <ImageView
             android:id="@+id/im_celsius"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_below="@+id/tv_tell"
-            android:layout_marginTop="8dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:src="@drawable/ic_celsius"/>
+            android:src="@drawable/ic_celsius"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"/>
         <TextView
-            android:id="@+id/tv_tell_celsius"
+            android:id="@+id/tv_real_celsius"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Celsius"
+            android:text="celsius"
+            android:layout_gravity="center_horizontal"
             android:textSize="18sp"
-            android:layout_gravity="center_vertical"
+            android:layout_below="@+id/im_celsius"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/celsius_scale"
+            android:layout_toRightOf="@+id/tv_real_celsius"
+            android:layout_toEndOf="@+id/tv_real_celsius"
+            android:layout_alignBottom="@id/tv_real_celsius"
             />
+        </RelativeLayout>
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:id="@+id/im_humidity"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/ic_humidity"
             android:layout_marginRight="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"/>
         <TextView
-            android:id="@+id/tv_tell_huminity"
+            android:id="@+id/tv_real_humdity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Humidity"
-            android:textSize="18sp"
-            android:layout_gravity="center_vertical"/>
+            android:text="humidity"
+            android:layout_below="@+id/im_humidity"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp">
+        </TextView>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/celsius_scale"
+                android:layout_toRightOf="@+id/tv_real_humdity"
+                android:layout_toEndOf="@+id/tv_real_humdity"
+                android:layout_alignBottom="@+id/tv_real_humdity"
+                >
+
+            </ImageView>
+        </RelativeLayout>
 
     </LinearLayout>
+    </LinearLayout>
+    <add.project.micro.co.th.projectmicroprocessor.CustomCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/im_machine"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_washing_machine"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                />
+            <TextView
+                android:id="@+id/tv_status_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status : "
+                android:layout_toRightOf="@+id/im_machine"
+                android:layout_toEndOf="@+id/im_machine"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_alignTop="@+id/im_machine"
+                android:layout_marginTop="16dp"
+                />
+            <TextView
+                android:id="@+id/tv_real_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="free"
+                android:layout_toRightOf="@+id/tv_status_first"
+                android:layout_toEndOf="@+id/tv_status_first"
+                android:layout_alignTop="@+id/tv_status_first"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:tint="@color/warmGrey"
+                />
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time : "
+                android:layout_below="@+id/tv_status_first"
+                android:layout_alignLeft="@+id/tv_status_first"
+                android:layout_alignStart="@+id/tv_status_first"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11:11:11"
+                android:layout_toRightOf="@id/tv_date"
+                android:layout_toEndOf="@+id/tv_date"
+                android:layout_alignBottom="@+id/tv_date"
+                />
+        </RelativeLayout>
+    </add.project.micro.co.th.projectmicroprocessor.CustomCardView>
 </LinearLayout>
+</ScrollView>
