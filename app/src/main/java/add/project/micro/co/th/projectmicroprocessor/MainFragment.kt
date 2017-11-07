@@ -21,19 +21,14 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.fragment_main.*
-import java.util.*
-import java.util.concurrent.TimeUnit
 
-@TargetApi(Build.VERSION_CODES.GINGERBREAD)
-@SuppressLint("NewApi")
 class MainFragment : Fragment() {
     var baseR = FirebaseDatabase.getInstance().getReference()
     var tempR = baseR.child("Temp")
     var logR = baseR.child("log")
     var positionR = baseR.child("position")
     var statusR = baseR.child("status")
-    @Nullable @BindView(R.id.image_washing) lateinit var imageView : ImageView
+    @Nullable @BindView(R.id.image_washing) lateinit var imageView  : ImageView
     @Nullable @BindView(R.id.tv_real_time) lateinit var leftTime: TextView
     @Nullable @BindView(R.id.tv_real_status) lateinit var status: TextView
 
@@ -94,12 +89,21 @@ class MainFragment : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val statusData = dataSnapshot.child("running").value
                 if (statusData.toString().equals("0") ) {
-                    imageView.setColorFilter(ContextCompat.getColor(context, R.color.green))
-                    status.text = "free"
-                }else {
-                    imageView.setColorFilter(ContextCompat.getColor(context, R.color.red))
-                    status.text = "running"
+                    try {
+                        imageView?.setColorFilter(ContextCompat.getColor(context, R.color.green))
+                        status.text = "free"
+                    }catch (e: NullPointerException) {
 
+                    }
+
+                }else {
+                    try {
+                        imageView?.setColorFilter(ContextCompat.getColor(context, R.color.red))
+                        status.text = "running"
+
+                    }catch (e: NullPointerException) {
+
+                    }
                 }
 
             }

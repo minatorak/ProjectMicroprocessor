@@ -25,8 +25,8 @@
     <ImageView
         android:id="@+id/im_weather"
         android:layout_below="@+id/tv_weather"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
         android:src="@drawable/ic_weather"
         android:layout_gravity="center_horizontal"/>
     <TextView
@@ -36,8 +36,9 @@
         android:text="อากาศดี"
         android:layout_marginTop="14dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
         android:textSize="18sp"
-        android:layout_marginBottom="14dp" />
+        />
     <TextView
         android:id="@+id/tv_status_weather"
         android:layout_width="wrap_content"
@@ -89,6 +90,8 @@
             android:layout_toRightOf="@+id/tv_real_celsius"
             android:layout_toEndOf="@+id/tv_real_celsius"
             android:layout_alignBottom="@id/tv_real_celsius"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             />
         </RelativeLayout>
     </LinearLayout>
@@ -127,7 +130,8 @@
                 android:layout_toRightOf="@+id/tv_real_humdity"
                 android:layout_toEndOf="@+id/tv_real_humdity"
                 android:layout_alignBottom="@+id/tv_real_humdity"
-                >
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp">
 
             </ImageView>
         </RelativeLayout>

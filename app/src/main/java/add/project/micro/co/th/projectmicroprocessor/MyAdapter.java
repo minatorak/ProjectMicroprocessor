@@ -14,20 +14,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     private AdapterView.OnItemClickListener listener;
     Context c;
     String[] status;
-    String[] statusShow;
-    String[] date;
-    String[] dateShow;
     int[] imgs;
     int[] arrow;
 
-    public MyAdapter(Context ctx,int[] imgs,String[] status, String[] statusShow, String[] date, String[] dateShow,
-                      int[] arrow) {
+    public MyAdapter(Context ctx,int[] imgs,String[] status, int[] arrow) {
         this.c = ctx;
         this.imgs = imgs;
         this.status = status;
-        this.statusShow = statusShow;
-        this.date = date;
-        this.dateShow = dateShow;
         this.arrow = arrow;
 
     }
@@ -44,9 +37,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     public void onBindViewHolder(MyHolder holder, int position) {
         holder.image.setImageResource(imgs[position]);
         holder.statusView.setText(status[position]);
-        holder.statusShow.setText(statusShow[position]);
-        holder.dateView.setText(date[position]);
-        holder.dateShow.setText(dateShow[position]);
         holder.arrowRight.setImageResource(arrow[position]);
 
         holder.setItemClickListener(new ItemClickListener() {
@@ -65,4 +55,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     public int getItemCount() {
         return arrow.length;
     }
+
+
 }

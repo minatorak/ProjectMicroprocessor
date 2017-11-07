@@ -16,9 +16,6 @@ class WashingViewHolder(view : View) : RecyclerView.ViewHolder(view),View.OnClic
 
     @Nullable @BindView(R.id.im_machine) lateinit var image : ImageView
     @Nullable @BindView(R.id.tv_status_first) lateinit var statusView : TextView
-    @Nullable @BindView(R.id.tv_real_status) lateinit var  statusShow : TextView
-    @Nullable @BindView(R.id.tv_date) lateinit var dateView : TextView
-    @Nullable @BindView(R.id.tv_time_real) lateinit var dateShow : TextView
     @Nullable @BindView(R.id.im_ic_arrow_right) lateinit var arrowRight : ImageView
 
     init {
