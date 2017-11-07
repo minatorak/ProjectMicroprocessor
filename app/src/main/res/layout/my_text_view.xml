@@ -9,55 +9,70 @@
     app:cardCornerRadius="0dp"
     app:cardElevation="1dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="16dp"
-        android:paddingTop="16dp">
-
-        <ImageView
-            android:id="@+id/im_washing"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/ic_washing_machine" />
-        <TextView
-            android:id="@+id/tv_order_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:layout_toRightOf="@+id/im_washing"
-            android:layout_toEndOf="@+id/im_washing"
-            android:layout_marginLeft="12dp"
-            android:layout_marginStart="12dp" />
-        <TextView
-            android:id="@+id/tv_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="status"
-            android:layout_toRightOf="@+id/im_washing"
-            android:layout_toEndOf="@+id/im_washing"
-            android:layout_below="@+id/tv_order_number"
-            android:layout_marginLeft="12dp"
-            android:layout_marginStart="12dp" />
-        <ImageView
-            android:id="@+id/icon_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:src="@drawable/ic_arrow_right"
-            android:tint="@color/warmGrey"
-            />
-
-    </RelativeLayout>
-
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/im_machine"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_washing_machine"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                />
+            <TextView
+                android:id="@+id/tv_status_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status : "
+                android:layout_toRightOf="@+id/im_machine"
+                android:layout_toEndOf="@+id/im_machine"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_alignTop="@+id/im_machine"
+                android:layout_marginTop="16dp"
+                />
+            <TextView
+                android:id="@+id/tv_real_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="free"
+                android:layout_toRightOf="@+id/tv_status_first"
+                android:layout_toEndOf="@+id/tv_status_first"
+                android:layout_alignTop="@+id/tv_status_first"
+                />
+            <ImageView
+                android:id="@+id/im_ic_arrow_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:tint="@color/warmGrey"
+                />
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time : "
+                android:layout_below="@+id/tv_status_first"
+                android:layout_alignLeft="@+id/tv_status_first"
+                android:layout_alignStart="@+id/tv_status_first"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/tv_time_real"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11:11:11"
+                android:layout_toRightOf="@id/tv_date"
+                android:layout_toEndOf="@+id/tv_date"
+                android:layout_alignBottom="@+id/tv_date"
+                />
+        </RelativeLayout>
     </add.project.micro.co.th.projectmicroprocessor.CustomCardView>
+

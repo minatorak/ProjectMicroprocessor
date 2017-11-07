@@ -108,8 +108,7 @@ class MainFragment : Fragment() {
         })
         }
 
-
-    companion object {
+    companion   object {
         fun newInstance(): MainFragment {
             val bundle = Bundle()
             val fragment = MainFragment()

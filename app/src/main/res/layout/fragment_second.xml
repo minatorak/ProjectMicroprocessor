@@ -134,72 +134,12 @@
 
     </LinearLayout>
     </LinearLayout>
-    <add.project.micro.co.th.projectmicroprocessor.CustomCardView
+    <add.project.micro.co.th.projectmicroprocessor.CustomRecyclerView
+        android:id="@+id/myrecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/im_machine"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/ic_washing_machine"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                />
-            <TextView
-                android:id="@+id/tv_status_first"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status : "
-                android:layout_toRightOf="@+id/im_machine"
-                android:layout_toEndOf="@+id/im_machine"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_alignTop="@+id/im_machine"
-                android:layout_marginTop="16dp"
-                />
-            <TextView
-                android:id="@+id/tv_real_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="free"
-                android:layout_toRightOf="@+id/tv_status_first"
-                android:layout_toEndOf="@+id/tv_status_first"
-                android:layout_alignTop="@+id/tv_status_first"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_arrow_right"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="16dp"
-                android:layout_marginEnd="16dp"
-                android:tint="@color/warmGrey"
-                />
-            <TextView
-                android:id="@+id/tv_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Time : "
-                android:layout_below="@+id/tv_status_first"
-                android:layout_alignLeft="@+id/tv_status_first"
-                android:layout_alignStart="@+id/tv_status_first"
-                android:layout_marginTop="8dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="11:11:11"
-                android:layout_toRightOf="@id/tv_date"
-                android:layout_toEndOf="@+id/tv_date"
-                android:layout_alignBottom="@+id/tv_date"
-                />
-        </RelativeLayout>
-    </add.project.micro.co.th.projectmicroprocessor.CustomCardView>
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/my_text_view">
+
+    </add.project.micro.co.th.projectmicroprocessor.CustomRecyclerView>
 </LinearLayout>
 </ScrollView>
