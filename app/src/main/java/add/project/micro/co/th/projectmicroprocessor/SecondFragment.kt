@@ -34,6 +34,9 @@ class SecondFragment : Fragment() {
     @NonNull @BindView(R.id.myrecycler) lateinit var rv : RecyclerView
     @NonNull @BindView(R.id.tv_real_celsius) lateinit var tvCelsius : TextView
     @NonNull @BindView(R.id.tv_real_humdity) lateinit var tvHumidity : TextView
+    @NonNull @BindView(R.id.im_weather) lateinit var imageWeather : ImageView
+    @NonNull @BindView(R.id.tv_tell_status) lateinit var tvTellStatus : TextView
+    @NonNull @BindView(R.id.tv_status_weather)lateinit var tvTellWeather : TextView
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_second, container, false)
@@ -53,6 +56,24 @@ class SecondFragment : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val celsius = dataSnapshot.child("Celcius").getValue(Float::class.java)
                 val huminity = dataSnapshot.child("Huminity").getValue(Float::class.java)
+                if (celsius!! >= 35 && huminity!! < 60) {
+                    tvTellStatus.text = "สภาพอากาศปลอดโปร่ง"
+                    tvTellWeather.text = "เหมาะกับการซักผ้าเป็นอย่างยิ่ง"
+                    imageWeather.setImageResource(R.drawable.ic_weather)
+                }else if (celsius >= 25 && celsius <= 30 && huminity!! >= 70&& huminity <= 84) {
+                    tvTellStatus.text = "สภาพอากาศเมฆมาก"
+                    tvTellWeather.text = "ควรระมัดระวังในการซักผ้า"
+                    imageWeather.setImageResource(R.drawable.ic_rain_clound)
+                }else if (celsius <= 25 && huminity!! >= 85) {
+                    tvTellStatus.text = "ฝนตก"
+                    tvTellWeather.text = "เสียใจด้วยคับ วันนี้ซักผ้าคงไม่แห้ง"
+                    imageWeather.setImageResource(R.drawable.ic_rain)
+                }else {
+                    tvTellStatus.text = "สภาพอากาศปลอดโปร่ง"
+                    tvTellWeather.text = "เหมาะกับการซักผ้าเป็นอย่างยิ่ง"
+                    imageWeather.setImageResource(R.drawable.ic_weather)
+                }
+
                 tvCelsius.text = celsius.toString()
                 tvHumidity.text = huminity.toString()
 
