@@ -41,6 +41,8 @@ class MainFragment : Fragment() {
         return view
 
     }
+
+    fun getMainActivity() : MainActivity { return activity as MainActivity}
     private fun dataTemp() {
         tempR.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
