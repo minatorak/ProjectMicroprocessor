@@ -1,13 +1,9 @@
 package add.project.micro.co.th.projectmicroprocessor
 
 
-import android.content.Context
 import android.os.Bundle
 import android.support.annotation.NonNull
-import android.support.annotation.Nullable
 import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.CardView
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -55,16 +51,16 @@ class SecondFragment : Fragment() {
         tempR.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val celsius = dataSnapshot.child("Celcius").getValue(Float::class.java)
-                val huminity = dataSnapshot.child("Huminity").getValue(Float::class.java)
-                if (celsius!! >= 35 && huminity!! < 60) {
+                val humidity = dataSnapshot.child("Huminity").getValue(Float::class.java)
+                if (celsius!! >= 35 && humidity!! < 60) {
                     tvTellStatus.text = "สภาพอากาศปลอดโปร่ง"
                     tvTellWeather.text = "เหมาะกับการซักผ้าเป็นอย่างยิ่ง"
                     imageWeather.setImageResource(R.drawable.ic_weather)
-                }else if (celsius >= 25 && celsius <= 30 && huminity!! >= 70&& huminity <= 84) {
+                }else if (celsius >= 25 && celsius <= 30 && humidity!! >= 70&& humidity <= 84) {
                     tvTellStatus.text = "สภาพอากาศเมฆมาก"
                     tvTellWeather.text = "ควรระมัดระวังในการซักผ้า"
                     imageWeather.setImageResource(R.drawable.ic_rain_clound)
-                }else if (celsius <= 25 && huminity!! >= 85) {
+                }else if (celsius <= 25 && humidity!! >= 85) {
                     tvTellStatus.text = "ฝนตก"
                     tvTellWeather.text = "เสียใจด้วยคับ วันนี้ซักผ้าคงไม่แห้ง"
                     imageWeather.setImageResource(R.drawable.ic_rain)
@@ -75,7 +71,7 @@ class SecondFragment : Fragment() {
                 }
 
                 tvCelsius.text = celsius.toString()
-                tvHumidity.text = huminity.toString()
+                tvHumidity.text = humidity.toString()
 
             }
 

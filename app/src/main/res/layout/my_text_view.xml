@@ -21,7 +21,7 @@
                 android:src="@drawable/ic_washing_machine"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:tint="@color/warmGrey"
+                android:tint="#039BE5"
                 />
             <TextView
                 android:id="@+id/tv_status_first"
@@ -35,6 +35,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:textStyle="bold"
+                android:textColor="#01579B"
                 />
 
             <ImageView
@@ -47,7 +48,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
-                android:tint="@color/warmGrey"
+                android:tint="#00B0FF"
                 />
         </RelativeLayout>
     </add.project.micro.co.th.projectmicroprocessor.CustomCardView>
