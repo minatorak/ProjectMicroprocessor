@@ -15,12 +15,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toolbar
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainFragment : Fragment() {
     var baseR = FirebaseDatabase.getInstance().getReference()
@@ -31,18 +33,29 @@ class MainFragment : Fragment() {
     @Nullable @BindView(R.id.image_washing) lateinit var imageView  : ImageView
     @Nullable @BindView(R.id.tv_real_time) lateinit var leftTime: TextView
     @Nullable @BindView(R.id.tv_real_status) lateinit var status: TextView
+    @Nullable @BindView(R.id.tv_topic) lateinit var topic : TextView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_main, container, false)!!
         ButterKnife.bind(this, view)
+        setToolBar()
         dataLog()
         dataStatus()
         return view
 
     }
 
+<<<<<<< HEAD
     fun getMainActivity() : MainActivity { return activity as MainActivity}
+=======
+    private fun setToolBar() {
+        getMainActivity().tv_topic.text = "Washing Machine"
+        getMainActivity().supportActionBar?.show()
+        getMainActivity().supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+>>>>>>> df58ca7cc704104bcaef0296adf532efe0c5cd38
     private fun dataTemp() {
         tempR.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -113,6 +126,7 @@ class MainFragment : Fragment() {
             }
         })
         }
+    fun getMainActivity(): MainActivity { return activity as MainActivity }
 
     companion   object {
         fun newInstance(): MainFragment {

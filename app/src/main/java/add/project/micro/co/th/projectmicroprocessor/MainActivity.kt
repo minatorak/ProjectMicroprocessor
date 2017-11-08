@@ -5,21 +5,32 @@ import android.os.Bundle
 import android.support.annotation.Nullable
 import android.support.v4.app.Fragment
 import android.support.v7.widget.Toolbar
+<<<<<<< HEAD
 import android.view.MenuItem
+=======
+>>>>>>> df58ca7cc704104bcaef0296adf532efe0c5cd38
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
 
 
 class MainActivity : AppCompatActivity() {
+<<<<<<< HEAD
     @Nullable @BindView(R.id.my_toolbar) lateinit var Mytoolbar : Toolbar
     @Nullable @BindView(R.id.tv_topic) lateinit var tvTopic : TextView
+=======
+    @Nullable @BindView(R.id.my_toolbar) lateinit var toolBar : Toolbar
+>>>>>>> df58ca7cc704104bcaef0296adf532efe0c5cd38
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         ButterKnife.bind(this)
+<<<<<<< HEAD
         setToolBar()
+=======
+        setSupportActionBar(toolBar)
+>>>>>>> df58ca7cc704104bcaef0296adf532efe0c5cd38
         initFragment()
 
     }

@@ -42,10 +42,12 @@ class SecondFragment : Fragment() {
         rv.layoutManager = mLayoutManager
         rv.itemAnimator = DefaultItemAnimator()
         rv.adapter = adapter
+            getMainActivity().supportActionBar?.hide()
         dataTemp()
 
         return view
     }
+    fun getMainActivity(): MainActivity { return activity as MainActivity }
 
     private fun dataTemp() {
         tempR.addValueEventListener(object : ValueEventListener {

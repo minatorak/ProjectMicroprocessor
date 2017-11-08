@@ -9,13 +9,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ImageView
         android:id="@+id/image_washing"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:src="@drawable/ic_washing_machine"
         android:layout_marginBottom="12dp"
+
         android:layout_marginTop="60dp"/>
     <TextView
         android:id="@+id/tv_status"
