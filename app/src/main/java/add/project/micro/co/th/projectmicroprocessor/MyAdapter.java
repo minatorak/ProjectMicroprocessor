@@ -12,10 +12,10 @@ import android.widget.AdapterView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     private AdapterView.OnItemClickListener listener;
-    Context c;
-    String[] status;
-    int[] imgs;
-    int[] arrow;
+    private Context c;
+    private String[] status;
+    private int[] imgs;
+    private int[] arrow;
 
     public MyAdapter(Context ctx,int[] imgs,String[] status, int[] arrow) {
         this.c = ctx;
@@ -44,8 +44,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
             public void onItemClick(View v, int pos) {
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
                 MainFragment fragment = new MainFragment();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment)
-                        .addToBackStack(null).commit();
+                activity.getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .addToBackStack(null)
+                        .commit();
 
             }
         });

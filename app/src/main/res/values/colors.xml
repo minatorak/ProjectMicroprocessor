@@ -9,4 +9,11 @@
     <color name="red">#FF0000</color>
     <color name="green">#7CFC00</color>
     <color name="azureTwo">#00ace8</color>
+    <color name="colorWhite">#ffffffff</color>
+    <color name="colorGrayishBrown">#4A4A4A</color>
+    <color name="colorWarmGrey">#9B9B9B</color>
+    <color name="colorBlue">#00a3dc</color>
+    <color name="colorLightBlue">#40C4FF</color>
+    <color name="colorBlueLight">#0091EA</color>
+    <color name="colorBlueIndigo">#0288D1</color>
 </resources>
