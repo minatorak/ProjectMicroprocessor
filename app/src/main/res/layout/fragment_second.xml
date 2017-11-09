@@ -84,7 +84,8 @@
             android:layout_gravity="center_horizontal"
             android:textSize="18sp"
             android:layout_below="@+id/im_celsius"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorBlueGray"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -123,7 +124,8 @@
             android:text="@string/humidity"
             android:layout_below="@+id/im_humidity"
             android:layout_centerHorizontal="true"
-            android:textSize="18sp">
+            android:textSize="18sp"
+            android:textColor="@color/colorBlueGray">
         </TextView>
             <ImageView
                 android:layout_width="wrap_content"

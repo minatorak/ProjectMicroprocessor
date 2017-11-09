@@ -22,34 +22,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/status"
-        android:layout_below="@+id/image_washing"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
         android:textSize="18sp"
         android:textColor="@color/colorBlueGray"
         android:textStyle="bold"
+        android:layout_below="@+id/tv_Left_time"
+        android:layout_alignLeft="@+id/tv_Left_time"
+        android:layout_alignStart="@+id/tv_Left_time"
+        android:layout_marginTop="8dp"
         />
     <TextView
         android:id="@+id/tv_real_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/free"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorBlueGray"
+        android:layout_alignBottom="@+id/tv_status"
         android:layout_toRightOf="@+id/tv_status"
         android:layout_toEndOf="@+id/tv_status"
-        android:layout_alignBottom="@+id/tv_status"
-        android:textSize="18sp"
-        android:textColor="@color/colorBlueGray" />
+        android:layout_alignLeft="@+id/tv_real_time"/>
     <TextView
         android:id="@+id/tv_Left_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/left_time"
         android:layout_marginTop="12dp"
-        android:layout_below="@+id/tv_status"
-        android:layout_alignLeft="@+id/tv_status"
-        android:layout_alignStart="@+id/tv_status"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_below="@+id/image_washing"
         android:textSize="18sp"
         android:textColor="@color/colorBlueGray"
         android:textStyle="bold"/>
@@ -58,32 +58,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_default"
-        android:layout_toRightOf="@+id/tv_Left_time"
-        android:layout_toEndOf="@+id/tv_Left_time"
-        android:layout_alignBottom="@+id/tv_Left_time"
-        android:layout_alignLeft="@+id/tv_real_status"
-        android:layout_alignStart="@+id/tv_real_status"
         android:textSize="18sp"
         android:textColor="@color/colorBlueGray"
+        android:layout_toRightOf="@+id/tv_Left_time"
+        android:layout_toEndOf="@id/tv_Left_time"
+        android:layout_alignBottom="@+id/tv_Left_time"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/minute"
+        android:textSize="18sp"
+        android:textColor="@color/colorBlueGray"
         android:layout_toRightOf="@+id/tv_real_time"
         android:layout_toEndOf="@+id/tv_real_time"
         android:layout_alignBottom="@+id/tv_real_time"
         android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:textSize="18sp"
-        android:textColor="@color/colorBlueGray" />
-
+        android:layout_marginStart="8dp"/>
     <EditText
         android:id="@+id/edt_e_mail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:imeOptions="actionNext"
-        android:layout_below="@+id/tv_Left_time"
+        android:layout_below="@+id/tv_status"
         style="@style/MailEditText" />
     <Button
         android:id="@+id/btn_summit"
@@ -93,6 +92,8 @@
         style="@style/ButtonBlue"
         android:layout_marginTop="@dimen/dp12"
         android:text="@string/summit"/>
+
+
 
 
 </RelativeLayout>
