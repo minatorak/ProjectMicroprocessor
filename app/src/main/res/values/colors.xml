@@ -9,7 +9,7 @@
     <color name="red">#FF0000</color>
     <color name="green">#7CFC00</color>
     <color name="azureTwo">#00ace8</color>
-    <color name="colorWhite">#ffffffff</color>
+    <color name="colorWhite">#FFFFFF</color>
     <color name="colorGrayishBrown">#4A4A4A</color>
     <color name="colorWarmGrey">#9B9B9B</color>
     <color name="colorBlue">#00a3dc</color>
@@ -20,4 +20,5 @@
     <color name="colorBluekid">#BBDEFB</color>
     <color name="colorBlueGray">#263238</color>
     <color name="colorTealBlue">#01579B</color>
+    <color name="colorBlack">#000000</color>
 </resources>

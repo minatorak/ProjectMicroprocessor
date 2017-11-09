@@ -5,102 +5,135 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainFragment"
-    android:background="#F5F5F5">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:background="#FFFFFF">
 
-    <ImageView
-        android:id="@+id/image_washing"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:src="@drawable/ic_washing_machine"
-        android:layout_marginBottom="12dp"
+        android:layout_height="match_parent">
 
-        android:layout_marginTop="16dp"/>
-    <TextView
-        android:id="@+id/tv_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/status"
-        android:textSize="18sp"
-        android:textColor="@color/colorBlueGray"
-        android:textStyle="bold"
-        android:layout_below="@+id/tv_Left_time"
-        android:layout_alignLeft="@+id/tv_Left_time"
-        android:layout_alignStart="@+id/tv_Left_time"
-        android:layout_marginTop="8dp"
-        />
-    <TextView
-        android:id="@+id/tv_real_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/free"
-        android:textSize="18sp"
-        android:textColor="@color/colorBlueGray"
-        android:layout_alignBottom="@+id/tv_status"
-        android:layout_toRightOf="@+id/tv_status"
-        android:layout_toEndOf="@+id/tv_status"
-        android:layout_alignLeft="@+id/tv_real_time"/>
-    <TextView
-        android:id="@+id/tv_Left_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/left_time"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_below="@+id/image_washing"
-        android:textSize="18sp"
-        android:textColor="@color/colorBlueGray"
-        android:textStyle="bold"/>
-    <TextView
-        android:id="@+id/tv_real_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_default"
-        android:textSize="18sp"
-        android:textColor="@color/colorBlueGray"
-        android:layout_toRightOf="@+id/tv_Left_time"
-        android:layout_toEndOf="@id/tv_Left_time"
-        android:layout_alignBottom="@+id/tv_Left_time"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/minute"
-        android:textSize="18sp"
-        android:textColor="@color/colorBlueGray"
-        android:layout_toRightOf="@+id/tv_real_time"
-        android:layout_toEndOf="@+id/tv_real_time"
-        android:layout_alignBottom="@+id/tv_real_time"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"/>
-    <EditText
-        android:id="@+id/edt_e_mail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:imeOptions="actionNext"
-        android:layout_below="@+id/tv_status"
-        style="@style/MailEditText"
-        android:layout_marginTop="@dimen/dp12"/>
-    <Button
-        android:id="@+id/btn_summit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edt_e_mail"
-        style="@style/ButtonBlue"
-        android:layout_marginTop="@dimen/dp12"
-        android:text="@string/summit"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_washing"
+                android:layout_width="200dp"
+                android:layout_height="220dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="16dp"
+
+                android:src="@drawable/ic_washing_machine" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/tv_Left_time"
+                android:layout_alignRight="@+id/tv_Left_time"
+                android:layout_below="@+id/tv_Left_time"
+                android:layout_marginTop="8dp"
+                android:text="สถานะเครื่องซักผ้า   :"
+                android:textColor="@color/colorBlueGray"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_real_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_status"
+                android:layout_alignLeft="@+id/tv_real_time"
+                android:layout_toEndOf="@+id/tv_status"
+                android:layout_toRightOf="@+id/tv_status"
+                android:text="ว่าง"
+                android:textColor="@color/colorBlueGray"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_Left_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_washing"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:text="ระยะเวลาคงเหลืออีก :"
+                android:textColor="@color/colorBlueGray"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_real_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_Left_time"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@id/tv_Left_time"
+                android:layout_toRightOf="@+id/tv_Left_time"
+                android:text="@string/_default"
+                android:textColor="@color/colorBlueGray"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_real_time"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/tv_real_time"
+                android:layout_toRightOf="@+id/tv_real_time"
+                android:text="นาที"
+                android:textColor="@color/colorBlueGray"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_Left_time"
+                android:layout_alignStart="@id/tv_Left_time"
+                android:layout_below="@+id/tv_status"
+                android:layout_marginTop="8dp"
+                android:text="Switch ON-OFF"
+                android:textColor="@color/colorBlueGray"
+                android:textSize="18sp"
+                android:textStyle="bold"
+
+                />
+
+            <add.project.micro.co.th.projectmicroprocessor.SettingsToggle
+                android:id="@+id/tg_switch"
+                xmlns:widget="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_alignBottom="@+id/tv_switch">
+
+            </add.project.micro.co.th.projectmicroprocessor.SettingsToggle>
+            <EditText
+                android:id="@+id/edt_e_mail"
+                style="@style/MailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_switch"
+                android:layout_marginTop="@dimen/dp12"
+                android:imeOptions="actionNext" />
+
+            <Button
+                android:id="@+id/btn_summit"
+                style="@style/ButtonBlue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edt_e_mail"
+                android:layout_marginTop="@dimen/dp12"
+                android:text="@string/summit" />
 
 
-
-
-</RelativeLayout>
-</ScrollView>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

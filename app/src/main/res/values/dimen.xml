@@ -5,4 +5,11 @@
     <dimen name="dp12">12dp</dimen>
     <dimen name="dp20">20dp</dimen>
     <dimen name="textSize">16sp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="settings_toggle_width">44dp</dimen>
+    <dimen name="settings_toggle_height">22dp</dimen>
+    <dimen name="settings_toggle_circle_diameter">22dp</dimen>
+    <dimen name="settings_toggle_circle_radius">11dp</dimen>
+    <dimen name="search_bar_height">48dp</dimen>
 </resources>

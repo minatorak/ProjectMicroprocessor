@@ -12,10 +12,7 @@ import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toolbar
+import android.widget.*
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.google.firebase.database.DataSnapshot
@@ -33,6 +30,7 @@ class MainFragment : Fragment() {
     @Nullable @BindView(R.id.image_washing) lateinit var imageView  : ImageView
     @Nullable @BindView(R.id.tv_real_time) lateinit var leftTime: TextView
     @Nullable @BindView(R.id.tv_real_status) lateinit var status: TextView
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
