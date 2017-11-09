@@ -16,12 +16,13 @@
         android:id="@+id/tv_weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="สภาพอากาศวันนี้"
+        android:text="@string/weather_today"
         android:layout_gravity="center_horizontal"
         android:textSize="22sp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="14dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/colorBlueGray"/>
     <ImageView
         android:id="@+id/im_weather"
         android:layout_width="230dp"
@@ -32,19 +33,21 @@
         android:id="@+id/tv_tell_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="อากาศดี"
+        android:text="@string/sunWeather"
         android:layout_marginTop="14dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="8dp"
         android:textSize="18sp"
+        android:textColor="@color/colorBlueGray"
         />
     <TextView
         android:id="@+id/tv_status_weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="เหมาะกับการซักผ้าเป็นอย่างยิ่ง"
+        android:text="@string/goodTime"
         android:layout_gravity="center_horizontal"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:textColor="@color/colorBlueGray"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -77,7 +80,7 @@
             android:id="@+id/tv_real_celsius"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="celsius"
+            android:text="@string/celsius"
             android:layout_gravity="center_horizontal"
             android:textSize="18sp"
             android:layout_below="@+id/im_celsius"
@@ -117,7 +120,7 @@
             android:id="@+id/tv_real_humdity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="humidity"
+            android:text="@string/humidity"
             android:layout_below="@+id/im_humidity"
             android:layout_centerHorizontal="true"
             android:textSize="18sp">

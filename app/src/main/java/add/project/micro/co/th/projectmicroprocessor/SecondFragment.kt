@@ -75,20 +75,20 @@ class SecondFragment : Fragment() {
 
     private fun setImage(celsius: Float?, humidity: Float?) {
         if (celsius!! >= 35 && humidity!! < 60) {
-            tvTellStatus.text = "สภาพอากาศปลอดโปร่ง"
-            tvTellWeather.text = "เหมาะกับการซักผ้าเป็นอย่างยิ่ง"
+            tvTellStatus.text = getString(R.string.sunWeather)
+            tvTellWeather.text = getString(R.string.goodTime)
             imageWeather.setImageResource(R.drawable.ic_weather)
         } else if (celsius >= 25 && celsius <= 30 && humidity!! >= 70 && humidity <= 84) {
-            tvTellStatus.text = "สภาพอากาศเมฆมาก"
-            tvTellWeather.text = "ควรระมัดระวังในการซักผ้า"
+            tvTellStatus.text = getString(R.string.clound_so_much)
+            tvTellWeather.text = getString(R.string.dangerus)
             imageWeather.setImageResource(R.drawable.ic_rain_clound)
         } else if (celsius <= 25 && humidity!! >= 85) {
-            tvTellStatus.text = "ฝนตก"
-            tvTellWeather.text = "เสียใจด้วยคับ วันนี้ซักผ้าคงไม่แห้ง"
+            tvTellStatus.text = getString(R.string.rain)
+            tvTellWeather.text = getString(R.string.sorry)
             imageWeather.setImageResource(R.drawable.ic_rain)
         } else {
-            tvTellStatus.text = "สภาพอากาศปลอดโปร่ง"
-            tvTellWeather.text = "เหมาะกับการซักผ้าเป็นอย่างยิ่ง"
+            tvTellStatus.text = getString(R.string.sunWeather)
+            tvTellWeather.text = getString(R.string.goodTime)
             imageWeather.setImageResource(R.drawable.ic_weather)
         }
     }

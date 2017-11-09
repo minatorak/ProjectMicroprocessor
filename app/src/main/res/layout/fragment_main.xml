@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/image_washing"
@@ -21,7 +21,7 @@
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Status :  "
+        android:text="@string/status"
         android:layout_below="@+id/image_washing"
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
@@ -33,7 +33,7 @@
         android:id="@+id/tv_real_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="free"
+        android:text="@string/free"
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
         android:layout_toRightOf="@+id/tv_status"
@@ -45,7 +45,7 @@
         android:id="@+id/tv_Left_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Left time :"
+        android:text="@string/left_time"
         android:layout_marginTop="12dp"
         android:layout_below="@+id/tv_status"
         android:layout_alignLeft="@+id/tv_status"
@@ -57,7 +57,7 @@
         android:id="@+id/tv_real_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="60"
+        android:text="@string/_default"
         android:layout_toRightOf="@+id/tv_Left_time"
         android:layout_toEndOf="@+id/tv_Left_time"
         android:layout_alignBottom="@+id/tv_Left_time"
@@ -69,7 +69,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="minute"
+        android:text="@string/minute"
         android:layout_toRightOf="@+id/tv_real_time"
         android:layout_toEndOf="@+id/tv_real_time"
         android:layout_alignBottom="@+id/tv_real_time"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:imeOptions="actionNext"
         android:layout_below="@+id/tv_Left_time"
-        style="@style/MailEditText"/>
+        style="@style/MailEditText" />
     <Button
         android:id="@+id/btn_summit"
         android:layout_width="match_parent"
@@ -92,7 +92,7 @@
         android:layout_below="@+id/edt_e_mail"
         style="@style/ButtonBlue"
         android:layout_marginTop="@dimen/dp12"
-        android:text="Summit"/>
+        android:text="@string/summit"/>
 
 
 </RelativeLayout>
