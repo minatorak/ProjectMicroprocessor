@@ -16,7 +16,7 @@
         android:src="@drawable/ic_washing_machine"
         android:layout_marginBottom="12dp"
 
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="16dp"/>
     <TextView
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
@@ -70,11 +70,13 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:textSize="18sp"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="style/MailEditText"
-        android:imeOptions="actionNext" />
+        android:imeOptions="actionNext"
+        android:layout_below="@+id/tv_Left_time"
+        style="@style/MailEditText"/>
 
 </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>

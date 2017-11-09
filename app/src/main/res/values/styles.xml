@@ -24,6 +24,10 @@
         <item name="android:maxLines">1</item>
         <item name="android:maxLength">15</item>
     </style>
+    <style name="EditTextWithStroke" parent="EditText">
+        <item name="android:background">@drawable/c_stroke</item>
+
+    </style>
     <style name="MailEditText" parent="EditText">
         <item name="android:inputType">text</item>
         <item name="android:drawableLeft">@drawable/ic_mail</item>
