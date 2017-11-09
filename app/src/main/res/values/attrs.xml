@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="toolbarStyle" format="reference"/>
+    <declare-styleable name="CustomTextView">
+        <attr name="animationTextChange" format="boolean" />
+        <attr name="android:text" />
+        <attr name="android:hint" />
+        <attr name="isPhoneNumber" format="boolean" />
+    </declare-styleable>
+
 </resources>

@@ -59,23 +59,7 @@ class SecondFragment : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val celsius = dataSnapshot.child("Celcius").getValue(Float::class.java)
                 val humidity = dataSnapshot.child("Huminity").getValue(Float::class.java)
-                if (celsius!! >= 35 && humidity!! < 60) {
-                    tvTellStatus.text = "สภาพอากาศปลอดโปร่ง"
-                    tvTellWeather.text = "เหมาะกับการซักผ้าเป็นอย่างยิ่ง"
-                    imageWeather.setImageResource(R.drawable.ic_weather)
-                }else if (celsius >= 25 && celsius <= 30 && humidity!! >= 70&& humidity <= 84) {
-                    tvTellStatus.text = "สภาพอากาศเมฆมาก"
-                    tvTellWeather.text = "ควรระมัดระวังในการซักผ้า"
-                    imageWeather.setImageResource(R.drawable.ic_rain_clound)
-                }else if (celsius <= 25 && humidity!! >= 85) {
-                    tvTellStatus.text = "ฝนตก"
-                    tvTellWeather.text = "เสียใจด้วยคับ วันนี้ซักผ้าคงไม่แห้ง"
-                    imageWeather.setImageResource(R.drawable.ic_rain)
-                }else {
-                    tvTellStatus.text = "สภาพอากาศปลอดโปร่ง"
-                    tvTellWeather.text = "เหมาะกับการซักผ้าเป็นอย่างยิ่ง"
-                    imageWeather.setImageResource(R.drawable.ic_weather)
-                }
+                setImage(celsius, humidity)
 
                 tvCelsius.text = celsius.toString()
                 tvHumidity.text = humidity.toString()
@@ -87,6 +71,26 @@ class SecondFragment : Fragment() {
             }
 
         })
+    }
+
+    private fun setImage(celsius: Float?, humidity: Float?) {
+        if (celsius!! >= 35 && humidity!! < 60) {
+            tvTellStatus.text = "สภาพอากาศปลอดโปร่ง"
+            tvTellWeather.text = "เหมาะกับการซักผ้าเป็นอย่างยิ่ง"
+            imageWeather.setImageResource(R.drawable.ic_weather)
+        } else if (celsius >= 25 && celsius <= 30 && humidity!! >= 70 && humidity <= 84) {
+            tvTellStatus.text = "สภาพอากาศเมฆมาก"
+            tvTellWeather.text = "ควรระมัดระวังในการซักผ้า"
+            imageWeather.setImageResource(R.drawable.ic_rain_clound)
+        } else if (celsius <= 25 && humidity!! >= 85) {
+            tvTellStatus.text = "ฝนตก"
+            tvTellWeather.text = "เสียใจด้วยคับ วันนี้ซักผ้าคงไม่แห้ง"
+            imageWeather.setImageResource(R.drawable.ic_rain)
+        } else {
+            tvTellStatus.text = "สภาพอากาศปลอดโปร่ง"
+            tvTellWeather.text = "เหมาะกับการซักผ้าเป็นอย่างยิ่ง"
+            imageWeather.setImageResource(R.drawable.ic_weather)
+        }
     }
 
     companion object {

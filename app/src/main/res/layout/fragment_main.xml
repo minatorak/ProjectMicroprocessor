@@ -26,6 +26,8 @@
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
         android:textSize="18sp"
+        android:textColor="@color/colorBlueGray"
+        android:textStyle="bold"
         />
     <TextView
         android:id="@+id/tv_real_status"
@@ -37,7 +39,8 @@
         android:layout_toRightOf="@+id/tv_status"
         android:layout_toEndOf="@+id/tv_status"
         android:layout_alignBottom="@+id/tv_status"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:textColor="@color/colorBlueGray" />
     <TextView
         android:id="@+id/tv_Left_time"
         android:layout_width="wrap_content"
@@ -47,7 +50,9 @@
         android:layout_below="@+id/tv_status"
         android:layout_alignLeft="@+id/tv_status"
         android:layout_alignStart="@+id/tv_status"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:textColor="@color/colorBlueGray"
+        android:textStyle="bold"/>
     <TextView
         android:id="@+id/tv_real_time"
         android:layout_width="wrap_content"
@@ -59,6 +64,7 @@
         android:layout_alignLeft="@+id/tv_real_status"
         android:layout_alignStart="@+id/tv_real_status"
         android:textSize="18sp"
+        android:textColor="@color/colorBlueGray"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -69,7 +75,8 @@
         android:layout_alignBottom="@+id/tv_real_time"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:textColor="@color/colorBlueGray" />
 
     <EditText
         android:id="@+id/edt_e_mail"
@@ -79,12 +86,14 @@
         android:layout_below="@+id/tv_Left_time"
         style="@style/MailEditText"/>
     <Button
+        android:id="@+id/btn_summit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edt_e_mail"
         style="@style/ButtonBlue"
         android:layout_marginTop="@dimen/dp12"
         android:text="Summit"/>
+
 
 </RelativeLayout>
 </ScrollView>
