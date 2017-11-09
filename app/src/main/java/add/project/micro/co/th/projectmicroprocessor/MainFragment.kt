@@ -45,7 +45,6 @@ class MainFragment : Fragment() {
 
     }
 
-
     private fun dataTemp() {
         tempR.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {

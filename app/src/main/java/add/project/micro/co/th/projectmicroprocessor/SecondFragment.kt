@@ -37,16 +37,21 @@ class SecondFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_second, container, false)
         ButterKnife.bind(this,view)
-        adapter = MyAdapter(context,imgShow.toIntArray(),tusView,arrow.toIntArray())
-        val mLayoutManager = LinearLayoutManager(context)
-        rv.layoutManager = mLayoutManager
-        rv.itemAnimator = DefaultItemAnimator()
-        rv.adapter = adapter
+            recyclerViewAdapter()
             getMainActivity().supportActionBar?.hide()
         dataTemp()
 
         return view
     }
+
+    private fun recyclerViewAdapter() {
+        adapter = MyAdapter(context, imgShow.toIntArray(), tusView, arrow.toIntArray())
+        val mLayoutManager = LinearLayoutManager(context)
+        rv.layoutManager = mLayoutManager
+        rv.itemAnimator = DefaultItemAnimator()
+        rv.adapter = adapter
+    }
+
     fun getMainActivity(): MainActivity { return activity as MainActivity }
 
     private fun dataTemp() {
