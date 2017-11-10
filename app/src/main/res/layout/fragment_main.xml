@@ -55,8 +55,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/image_washing"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="12dp"
                 android:text="ระยะเวลาคงเหลืออีก :"
                 android:textColor="@color/colorBlueGray"
@@ -70,20 +70,23 @@
                 android:layout_alignBottom="@+id/tv_Left_time"
                 android:layout_marginLeft="12dp"
                 android:layout_marginStart="12dp"
-                android:layout_toEndOf="@id/tv_Left_time"
-                android:layout_toRightOf="@+id/tv_Left_time"
+                android:layout_toLeftOf="@+id/tv_show_minute"
+                android:layout_toStartOf="@+id/tv_show_minute"
                 android:text="@string/_default"
                 android:textColor="@color/colorBlueGray"
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/tv_show_minute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/tv_real_time"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_toEndOf="@+id/tv_real_time"
-                android:layout_toRightOf="@+id/tv_real_time"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="24dp"
+                android:layout_marginEnd="24dp"
                 android:text="นาที"
                 android:textColor="@color/colorBlueGray"
                 android:textSize="18sp" />
@@ -96,7 +99,7 @@
                 android:layout_alignStart="@id/tv_Left_time"
                 android:layout_below="@+id/tv_status"
                 android:layout_marginTop="8dp"
-                android:text="Switch ON-OFF"
+                android:text="Switch OFF-ON"
                 android:textColor="@color/colorBlueGray"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -112,7 +115,9 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_alignBottom="@+id/tv_switch">
+                android:layout_alignBottom="@+id/tv_switch"
+                android:layout_alignStart="@+id/tv_real_time"
+                android:layout_alignLeft="@+id/tv_real_time">
 
             </add.project.micro.co.th.projectmicroprocessor.SettingsToggle>
             <EditText
@@ -121,8 +126,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_switch"
-                android:layout_marginTop="@dimen/dp12"
-                android:imeOptions="actionNext" />
+                android:layout_marginTop="@dimen/dp20"
+                android:imeOptions="actionNext"/>
 
             <Button
                 android:id="@+id/btn_summit"
@@ -130,8 +135,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/edt_e_mail"
-                android:layout_marginTop="@dimen/dp12"
-                android:text="@string/summit" />
+                android:layout_marginTop="@dimen/dp20"
+                android:text="@string/summit"/>
 
 
         </RelativeLayout>
