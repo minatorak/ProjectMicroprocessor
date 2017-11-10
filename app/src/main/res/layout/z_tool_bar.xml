@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#039BE5"
+        android:background="@color/colorBluebar"
         app:contentInsetLeft="0dp"
         app:contentInsetStart="0dp"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -24,7 +24,7 @@
             android:maxLines="1"
             android:textStyle="normal"
             android:textSize="22sp"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/colorWhite"
             tools:text="Toolbar" />
 
     </android.support.v7.widget.Toolbar>

@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        tvTopic.text = "Washing Machine"
+        tvTopic.text = getString(R.string.washingmachine)
     }
 
     fun initFragment() {

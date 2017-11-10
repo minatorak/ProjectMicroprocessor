@@ -94,16 +94,16 @@ class MainFragment : Fragment() {
                 val statusData = dataSnapshot.child("running").value
                 if (statusData.toString().equals("0") ) {
                     try {
-                        imageView?.setColorFilter(ContextCompat.getColor(context, R.color.green))
-                        status.text = "ว่าง"
+                        imageView.setColorFilter(ContextCompat.getColor(context, R.color.green))
+                        status.text = getString(R.string.Blank)
                     }catch (e: NullPointerException) {
 
                     }
 
                 }else {
                     try {
-                        imageView?.setColorFilter(ContextCompat.getColor(context, R.color.red))
-                        status.text = "กำลังทำงาน"
+                        imageView.setColorFilter(ContextCompat.getColor(context, R.color.red))
+                        status.text = getString(R.string.isRunning)
 
                     }catch (e: NullPointerException) {
 

@@ -22,4 +22,7 @@
     <string name="_default">60</string>
     <string name="minute">minute</string>
     <string name="summit">Summit</string>
+    <string name="washingmachine">Washing Machine</string>
+    <string name="Blank">ว่าง</string>
+    <string name="isRunning">กำลังทำงาน</string>
 </resources>
