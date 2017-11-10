@@ -1,6 +1,8 @@
-package add.project.micro.co.th.projectmicroprocessor
+package add.project.micro.co.th.projectmicroprocessor.fragment
 
 
+import add.project.micro.co.th.projectmicroprocessor.R
+import add.project.micro.co.th.projectmicroprocessor.activity.MainActivity
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
@@ -18,8 +20,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import android.support.annotation.RequiresApi
-import add.project.micro.co.th.projectmicroprocessor.SettingsToggle
-import android.animation.ObjectAnimator
 
 
 class MainFragment : Fragment() {
@@ -115,7 +115,8 @@ class MainFragment : Fragment() {
             }
         })
         }
-    fun getMainActivity(): MainActivity { return activity as MainActivity }
+    fun getMainActivity(): MainActivity { return activity as MainActivity
+    }
 
     companion   object {
         fun newInstance(): MainFragment {

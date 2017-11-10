@@ -1,5 +1,7 @@
-package add.project.micro.co.th.projectmicroprocessor
+package add.project.micro.co.th.projectmicroprocessor.activity
 
+import add.project.micro.co.th.projectmicroprocessor.R
+import add.project.micro.co.th.projectmicroprocessor.fragment.SecondFragment
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.annotation.Nullable

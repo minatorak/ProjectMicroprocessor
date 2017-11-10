@@ -1,4 +1,4 @@
-package add.project.micro.co.th.projectmicroprocessor;
+package add.project.micro.co.th.projectmicroprocessor.mapping;
 
 import java.util.HashMap;
 import java.util.Map;

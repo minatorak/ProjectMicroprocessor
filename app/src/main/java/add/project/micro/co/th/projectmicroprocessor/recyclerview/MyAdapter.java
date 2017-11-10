@@ -1,6 +1,5 @@
-package add.project.micro.co.th.projectmicroprocessor;
+package add.project.micro.co.th.projectmicroprocessor.recyclerview;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+
+import add.project.micro.co.th.projectmicroprocessor.R;
+import add.project.micro.co.th.projectmicroprocessor.fragment.MainFragment;
 
 
 public class MyAdapter extends RecyclerView.Adapter<MyHolder> {

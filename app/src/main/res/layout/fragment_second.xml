@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    tools:context=".fragment.SecondFragment">
 <LinearLayout
     android:id="@+id/rela_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@color/colorGray">
 
     <TextView
         android:id="@+id/tv_weather"
@@ -142,12 +142,12 @@
 
     </LinearLayout>
     </LinearLayout>
-    <add.project.micro.co.th.projectmicroprocessor.CustomRecyclerView
+    <add.project.micro.co.th.projectmicroprocessor.custom.CustomRecyclerView
         android:id="@+id/myrecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/my_text_view">
 
-    </add.project.micro.co.th.projectmicroprocessor.CustomRecyclerView>
+    </add.project.micro.co.th.projectmicroprocessor.custom.CustomRecyclerView>
 </LinearLayout>
 </ScrollView>

@@ -1,5 +1,6 @@
-package add.project.micro.co.th.projectmicroprocessor
+package add.project.micro.co.th.projectmicroprocessor.notification
 
+import add.project.micro.co.th.projectmicroprocessor.R
 import android.app.Notification
 import android.graphics.Color
 import android.media.RingtoneManager

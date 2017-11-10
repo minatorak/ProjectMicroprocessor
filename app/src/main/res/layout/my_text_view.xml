@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<add.project.micro.co.th.projectmicroprocessor.CustomCardView
+<add.project.micro.co.th.projectmicroprocessor.custom.CustomCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardview_washing"
@@ -12,7 +12,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#EEEEEE">
+            android:background="@color/colorWhite">
             <ImageView
                 android:id="@+id/im_machine"
                 android:layout_width="80dp"
@@ -52,5 +52,5 @@
                 android:tint="#00B0FF"
                 />
         </RelativeLayout>
-    </add.project.micro.co.th.projectmicroprocessor.CustomCardView>
+    </add.project.micro.co.th.projectmicroprocessor.custom.CustomCardView>
 

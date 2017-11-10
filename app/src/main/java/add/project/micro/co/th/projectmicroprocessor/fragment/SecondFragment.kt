@@ -1,6 +1,9 @@
-package add.project.micro.co.th.projectmicroprocessor
+package add.project.micro.co.th.projectmicroprocessor.fragment
 
 
+import add.project.micro.co.th.projectmicroprocessor.recyclerview.MyAdapter
+import add.project.micro.co.th.projectmicroprocessor.R
+import add.project.micro.co.th.projectmicroprocessor.activity.MainActivity
 import android.os.Bundle
 import android.support.annotation.NonNull
 import android.support.v4.app.Fragment
@@ -52,7 +55,8 @@ class SecondFragment : Fragment() {
         rv.adapter = adapter
     }
 
-    fun getMainActivity(): MainActivity { return activity as MainActivity }
+    fun getMainActivity(): MainActivity { return activity as MainActivity
+    }
 
     private fun dataTemp() {
         tempR.addValueEventListener(object : ValueEventListener {

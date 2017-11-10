@@ -1,9 +1,11 @@
-package add.project.micro.co.th.projectmicroprocessor;
+package add.project.micro.co.th.projectmicroprocessor.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import add.project.micro.co.th.projectmicroprocessor.R;
 
 
 public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
