@@ -15,10 +15,12 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import com.google.firebase.database.FirebaseDatabase
 
 
 @Suppress("DEPRECATION")
 class SettingsToggle : RelativeLayout, View.OnClickListener {
+    val baseR = FirebaseDatabase.getInstance().getReference()
     internal lateinit var layout: FrameLayout
     internal lateinit var toggleCircle: View
     internal lateinit var background_oval_off: View
@@ -57,10 +59,12 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
         if (bgDrawableOff != null) {
             val id = resources.getIdentifier(bgDrawableOff, "drawable", context.packageName)
             background_oval_off.background = resources.getDrawable(id)
+            baseR.child("status").child("power").setValue(0)
         }
         if (bgDrawableOn != null) {
             val id = resources.getIdentifier(bgDrawableOn, "drawable", context.packageName)
             background_oval_on.background = resources.getDrawable(id)
+            baseR.child("status").child("power").setValue(1)
         }
 
         textView.text = text
