@@ -2,10 +2,8 @@ package add.project.micro.co.th.projectmicroprocessor
 
 
 import android.annotation.SuppressLint
-import android.annotation.TargetApi
 import android.os.Build
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.support.annotation.Nullable
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
@@ -19,7 +17,10 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_main.*
+import android.support.annotation.RequiresApi
+import add.project.micro.co.th.projectmicroprocessor.SettingsToggle
+import android.animation.ObjectAnimator
+
 
 class MainFragment : Fragment() {
     var baseR = FirebaseDatabase.getInstance().getReference()
@@ -31,7 +32,7 @@ class MainFragment : Fragment() {
     @Nullable @BindView(R.id.tv_real_time) lateinit var leftTime: TextView
     @Nullable @BindView(R.id.tv_real_status) lateinit var status: TextView
 
-
+    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_main, container, false)!!
@@ -42,6 +43,7 @@ class MainFragment : Fragment() {
         return view
 
     }
+
 
     private fun dataTemp() {
         tempR.addValueEventListener(object : ValueEventListener {
@@ -93,7 +95,7 @@ class MainFragment : Fragment() {
                 if (statusData.toString().equals("0") ) {
                     try {
                         imageView?.setColorFilter(ContextCompat.getColor(context, R.color.green))
-                        status.text = "free"
+                        status.text = "ว่าง"
                     }catch (e: NullPointerException) {
 
                     }
@@ -101,7 +103,7 @@ class MainFragment : Fragment() {
                 }else {
                     try {
                         imageView?.setColorFilter(ContextCompat.getColor(context, R.color.red))
-                        status.text = "running"
+                        status.text = "กำลังทำงาน"
 
                     }catch (e: NullPointerException) {
 
