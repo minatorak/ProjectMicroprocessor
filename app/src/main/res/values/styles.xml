@@ -33,7 +33,7 @@
     </style>
     <style name="EditText" parent="TextView">
         <item name="android:maxLines">1</item>
-        <item name="android:maxLength">15</item>
+        <item name="android:maxLength">25</item>
     </style>
     <style name="EditTextWithStroke" parent="EditText">
         <item name="android:background">@drawable/c_stroke</item>

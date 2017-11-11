@@ -28,10 +28,12 @@ class SecondFragment : Fragment() {
     var logR = baseR.child("log")
     var positionR = baseR.child("position")
     var statusR = baseR.child("status")
+    var notiR = baseR.child("Noti")
     @Nullable @BindView(R.id.image_washing) lateinit var imageView  : ImageView
     @Nullable @BindView(R.id.tv_real_time) lateinit var leftTime: TextView
     @Nullable @BindView(R.id.tv_real_status) lateinit var status: TextView
-
+    @Nullable @BindView(R.id.edt_e_mail) lateinit var edtMail : EditText
+    @Nullable @BindView(R.id.btn_summit) lateinit var btnSummit : Button
     @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -40,8 +42,21 @@ class SecondFragment : Fragment() {
         getMainActivity().supportActionBar?.show()
         dataLog()
         dataStatus()
+        setEmail()
         return view
 
+    }
+
+    private fun setEmail() {
+        btnSummit.setOnClickListener {
+            if (edtMail.length() == 0 ) {
+                Toast.makeText(context, "กรุณากรอก E-mail ของท่าน", Toast.LENGTH_LONG).show()
+            } else if (edtMail.length() != 0){
+                baseR.child("Noti").child("Email").setValue(edtMail.toString())
+                Toast.makeText(context, "ทำการบันทึกสำเร็จ", Toast.LENGTH_LONG).show()
+            }
+
+        }
     }
 
 
@@ -115,6 +130,18 @@ class SecondFragment : Fragment() {
             }
         })
         }
+    private fun dataNoti() {
+         notiR.addValueEventListener(object : ValueEventListener {
+             override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+             }
+
+             override fun onCancelled(p0: DatabaseError?) {
+
+             }
+         })
+    }
+
     fun getMainActivity(): MainActivity { return activity as MainActivity
     }
 
