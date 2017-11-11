@@ -1,7 +1,7 @@
 package add.project.micro.co.th.projectmicroprocessor.activity
 
 import add.project.micro.co.th.projectmicroprocessor.R
-import add.project.micro.co.th.projectmicroprocessor.fragment.SecondFragment
+import add.project.micro.co.th.projectmicroprocessor.fragment.FirstFragment
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.annotation.Nullable
@@ -36,12 +36,12 @@ class MainActivity : AppCompatActivity() {
 
     fun initFragment() {
         supportFragmentManager.beginTransaction()
-                .replace(R.id.container, SecondFragment.newInstance())
+                .replace(R.id.container, FirstFragment.newInstance())
                 .commit()
     }
     fun changeFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-                .replace(R.id.container, SecondFragment.newInstance())
+                .replace(R.id.container, FirstFragment.newInstance())
                 .addToBackStack(null)
                 .commit()
     }

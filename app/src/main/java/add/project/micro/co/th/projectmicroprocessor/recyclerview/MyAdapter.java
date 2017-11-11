@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import add.project.micro.co.th.projectmicroprocessor.R;
-import add.project.micro.co.th.projectmicroprocessor.fragment.MainFragment;
+import add.project.micro.co.th.projectmicroprocessor.fragment.SecondFragment;
 
 
 public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
@@ -45,7 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
             @Override
             public void onItemClick(View v, int pos) {
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                MainFragment fragment = new MainFragment();
+                SecondFragment fragment = new SecondFragment();
                 activity.getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.container, fragment)
