@@ -22,6 +22,8 @@ import com.google.firebase.database.ValueEventListener
 import android.support.annotation.RequiresApi
 
 
+
+
 class SecondFragment : Fragment() {
     var baseR = FirebaseDatabase.getInstance().getReference()
     var tempR = baseR.child("Temp")
@@ -52,7 +54,7 @@ class SecondFragment : Fragment() {
             if (edtMail.length() == 0 ) {
                 Toast.makeText(context, "กรุณากรอก E-mail ของท่าน", Toast.LENGTH_LONG).show()
             } else if (edtMail.length() != 0){
-                baseR.child("Noti").child("Email").setValue(edtMail.toString())
+                baseR.child("Noti").child("Email").setValue(edtMail.text.toString())
                 Toast.makeText(context, "ทำการบันทึกสำเร็จ", Toast.LENGTH_LONG).show()
             }
 
@@ -60,26 +62,18 @@ class SecondFragment : Fragment() {
     }
 
 
-    private fun dataTemp() {
-        tempR.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-            val celsius = dataSnapshot.child("Celcius").getValue(Float::class.java)
-            val huminity = dataSnapshot.child("Huminity").getValue(Float::class.java)
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-
-            }
-
-        })
-    }
-
     private fun dataLog() {
         logR.addValueEventListener(object : ValueEventListener {
             @SuppressLint("SetTextI18n")
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val count = dataSnapshot.child("countDown").getValue(Int::class.java)
                 leftTime.text = count.toString()
+//                if (leftTime.text == "0") {
+//                    val intent = Intent(ACTION_CHANNEL_NOTIFICATION_SETTINGS)
+//                    intent.putExtra(Settings.EXTRA_CHANNEL_ID, mChannel.getId())
+//                    intent.putExtra(Settings.EXTRA_APP_PACKAGE, getPackageName())
+//                    startActivity(intent)
+//                }
 
             }
 

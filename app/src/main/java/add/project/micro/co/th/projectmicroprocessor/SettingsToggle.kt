@@ -15,12 +15,16 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 @Suppress("DEPRECATION")
 class SettingsToggle : RelativeLayout, View.OnClickListener {
     val baseR = FirebaseDatabase.getInstance().getReference()
+    val statusPower = baseR.child("status")
     internal lateinit var layout: FrameLayout
     internal lateinit var toggleCircle: View
     internal lateinit var background_oval_off: View
@@ -59,12 +63,10 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
         if (bgDrawableOff != null) {
             val id = resources.getIdentifier(bgDrawableOff, "drawable", context.packageName)
             background_oval_off.background = resources.getDrawable(id)
-            baseR.child("status").child("power").setValue(0)
         }
         if (bgDrawableOn != null) {
             val id = resources.getIdentifier(bgDrawableOn, "drawable", context.packageName)
             background_oval_on.background = resources.getDrawable(id)
-            baseR.child("status").child("power").setValue(1)
         }
 
         textView.text = text
@@ -78,6 +80,7 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
 
         _sp = context.getSharedPreferences(context.getString(R.string.summit), Context.MODE_PRIVATE)
     }
+
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
 
@@ -94,9 +97,11 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
         if (pref) {
             _oaLeft!!.start()
             _crossfadeViews(background_oval_on, background_oval_off, 110)
+            baseR.child("status").child("power").setValue(0)
         } else {
             _oaRight!!.start()
             _crossfadeViews(background_oval_off, background_oval_on, 400)
+            baseR.child("status").child("power").setValue(1)
         }
 
         editor.putBoolean(_prefName, !pref)
