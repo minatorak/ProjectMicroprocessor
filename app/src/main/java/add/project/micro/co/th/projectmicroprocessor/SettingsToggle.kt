@@ -5,7 +5,6 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.SharedPreferences
-import android.content.res.TypedArray
 import android.graphics.Color
 import android.os.Build
 import android.support.annotation.RequiresApi
@@ -15,10 +14,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 
 
 @Suppress("DEPRECATION")

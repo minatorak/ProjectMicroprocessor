@@ -127,8 +127,8 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_alignBottom="@+id/tv_switch"
-                android:layout_alignStart="@+id/tv_real_time"
-                android:layout_alignLeft="@+id/tv_real_time">
+                android:layout_alignEnd="@+id/tv_show_minute"
+                android:layout_alignRight="@+id/tv_show_minute">
 
             </add.project.micro.co.th.projectmicroprocessor.SettingsToggle>
 
@@ -142,7 +142,6 @@
                 android:layout_alignStart="@+id/tv_switch"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/colorBlueGray"
-                android:textStyle="bold"
                 />
             <EditText
                 android:id="@+id/edt_e_mail"
