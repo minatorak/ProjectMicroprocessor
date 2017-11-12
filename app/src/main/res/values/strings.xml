@@ -6,7 +6,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="e_mail">การแจ้งเตือนด้วย @Email ของคุณ</string>
+    <string name="e_mail">yourname@email.com</string>
     <string name="sunWeather">สภาพอากาศปลอดโปร่ง</string>
     <string name="goodTime">เหมาะกับการซักผ้าเป็นอย่างยิ่ง</string>
     <string name="clound_so_much">สภาพอากาศเมฆมาก</string>
@@ -25,4 +25,11 @@
     <string name="washingmachine">Washing Machine</string>
     <string name="Blank">ว่าง</string>
     <string name="isRunning">กำลังทำงาน</string>
+    <string name="put_email_please">ถ้าคุณต้องการข้อความแจ้งเตือน \nกรุณากรอก e-mail ของคุณ</string>
+    <string name="switch_on_off">Switch OFF-ON</string>
+    <string name="minutes">นาที</string>
+    <string name="Left_time">ระยะเวลาคงเหลืออีก :</string>
+    <string name="blank">ว่าง</string>
+    <string name="washing_status">สถานะเครื่องซักผ้า</string>
+    <string name="dot">:</string>
 </resources>

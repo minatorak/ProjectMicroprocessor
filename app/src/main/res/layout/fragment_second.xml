@@ -5,7 +5,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragment.SecondFragment"
-    android:background="#FFFFFF">
+    android:background="@color/colorGray">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,22 +31,35 @@
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/tv_Left_time"
                 android:layout_alignRight="@+id/tv_Left_time"
+                android:layout_alignLeft="@+id/tv_Left_time"
+                android:layout_alignStart="@+id/tv_Left_time"
                 android:layout_below="@+id/tv_Left_time"
                 android:layout_marginTop="8dp"
-                android:text="สถานะเครื่องซักผ้า   :"
+                android:text="@string/washing_status"
                 android:textColor="@color/colorBlueGray"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dot"
+                android:layout_alignEnd="@+id/tv_Left_time"
+                android:layout_alignRight="@+id/tv_Left_time"
+                android:layout_alignBottom="@+id/tv_status"
+                android:textColor="@color/colorBlueGray"
+                android:textStyle="bold"
+                android:textSize="18sp" />
             <TextView
                 android:id="@+id/tv_real_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/tv_status"
                 android:layout_alignLeft="@+id/tv_real_time"
+                android:layout_alignStart="@+id/tv_real_time"
                 android:layout_toEndOf="@+id/tv_status"
                 android:layout_toRightOf="@+id/tv_status"
-                android:text="ว่าง"
+                android:text="@string/blank"
                 android:textColor="@color/colorBlueGray"
                 android:textSize="18sp" />
 
@@ -58,7 +71,7 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="12dp"
-                android:text="ระยะเวลาคงเหลืออีก :"
+                android:text="@string/Left_time"
                 android:textColor="@color/colorBlueGray"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -87,7 +100,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="24dp"
                 android:layout_marginEnd="24dp"
-                android:text="นาที"
+                android:text="@string/minutes"
                 android:textColor="@color/colorBlueGray"
                 android:textSize="18sp" />
 
@@ -99,16 +112,14 @@
                 android:layout_alignStart="@id/tv_Left_time"
                 android:layout_below="@+id/tv_status"
                 android:layout_marginTop="8dp"
-                android:text="Switch OFF-ON"
+                android:text="@string/switch_on_off"
                 android:textColor="@color/colorBlueGray"
                 android:textSize="18sp"
                 android:textStyle="bold"
 
                 />
-
             <add.project.micro.co.th.projectmicroprocessor.SettingsToggle
                 android:id="@+id/tg_switch"
-                xmlns:widget="http://schemas.android.com/apk/res-auto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -120,13 +131,26 @@
                 android:layout_alignLeft="@+id/tv_real_time">
 
             </add.project.micro.co.th.projectmicroprocessor.SettingsToggle>
+
+            <TextView
+                android:id="@+id/tv_please_put_e_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/put_email_please"
+                android:layout_below="@+id/tv_switch"
+                android:layout_alignLeft="@+id/tv_switch"
+                android:layout_alignStart="@+id/tv_switch"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorBlueGray"
+                android:textStyle="bold"
+                />
             <EditText
                 android:id="@+id/edt_e_mail"
                 style="@style/MailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_switch"
-                android:layout_marginTop="@dimen/dp20"
+                android:layout_below="@+id/tv_please_put_e_mail"
+                android:layout_marginTop="8dp"
                 android:imeOptions="actionNext"/>
 
             <Button

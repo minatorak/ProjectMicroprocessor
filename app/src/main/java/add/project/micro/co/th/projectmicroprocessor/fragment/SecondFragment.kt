@@ -7,6 +7,7 @@ import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.Nullable
+import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
@@ -19,16 +20,11 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import android.support.annotation.RequiresApi
-
-
 
 
 class SecondFragment : Fragment() {
     var baseR = FirebaseDatabase.getInstance().getReference()
-    var tempR = baseR.child("Temp")
     var logR = baseR.child("log")
-    var positionR = baseR.child("position")
     var statusR = baseR.child("status")
     var notiR = baseR.child("Noti")
     @Nullable @BindView(R.id.image_washing) lateinit var imageView  : ImageView
@@ -83,20 +79,6 @@ class SecondFragment : Fragment() {
 
     }
 
-    private fun dataPosition() {
-        positionR.addValueEventListener(object :ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-            val latitude = dataSnapshot.child("latitude").getValue(Double::class.java)
-            val longitude = dataSnapshot.child("lng").getValue(Double::class.java)
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-
-            }
-
-        })
-    }
-
     private fun dataStatus() {
         statusR.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -124,18 +106,6 @@ class SecondFragment : Fragment() {
             }
         })
         }
-    private fun dataNoti() {
-         notiR.addValueEventListener(object : ValueEventListener {
-             override fun onDataChange(dataSnapshot: DataSnapshot) {
-
-             }
-
-             override fun onCancelled(p0: DatabaseError?) {
-
-             }
-         })
-    }
-
     fun getMainActivity(): MainActivity { return activity as MainActivity
     }
 
