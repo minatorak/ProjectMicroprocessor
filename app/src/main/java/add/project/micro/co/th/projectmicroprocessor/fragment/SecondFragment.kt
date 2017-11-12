@@ -53,7 +53,7 @@ class SecondFragment : Fragment() {
                 baseR.child("Noti").child("Email").setValue(edtMail.text.toString())
                 Toast.makeText(context, "ทำการบันทึกสำเร็จ", Toast.LENGTH_LONG).show()
             }
-
+            edtMail.setText("")
         }
     }
 
