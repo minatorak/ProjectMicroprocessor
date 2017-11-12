@@ -79,6 +79,7 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
         _oaRight = ObjectAnimator.ofFloat(toggleCircle, "x", 0f,44f ).setDuration(250)
 
         _sp = context.getSharedPreferences(context.getString(R.string.summit), Context.MODE_PRIVATE)
+
     }
 
 

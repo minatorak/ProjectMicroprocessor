@@ -106,7 +106,7 @@ class SecondFragment : Fragment() {
             }
         })
         }
-    fun getMainActivity(): MainActivity { return activity as MainActivity
+    private fun getMainActivity(): MainActivity { return activity as MainActivity
     }
 
     companion   object {
