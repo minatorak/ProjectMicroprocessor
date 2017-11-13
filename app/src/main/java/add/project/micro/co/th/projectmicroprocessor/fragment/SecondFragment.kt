@@ -82,8 +82,12 @@ class SecondFragment : Fragment() {
                 val statusData = dataSnapshot.child("running").getValue(Int::class.java)
                 val powerData = dataSnapshot.child("power").getValue(Int::class.java)
                 if (powerData == 0 ) {
-                    imageView.setColorFilter(ContextCompat.getColor(context, R.color.colorBlueGray))
-                    status.text = "เครื่องปิด"
+                    try {
+                        imageView.setColorFilter(ContextCompat.getColor(context, R.color.colorBlueGray))
+                        status.text = "เครื่องปิด"
+                    }catch (e : NullPointerException) {
+
+                    }
                 }else if (powerData == 1 && statusData == 0 ) {
                     try {
                         imageView.setColorFilter(ContextCompat.getColor(context, R.color.green))
