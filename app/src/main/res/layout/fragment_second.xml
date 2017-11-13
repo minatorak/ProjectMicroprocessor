@@ -22,8 +22,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="12dp"
                 android:layout_marginTop="16dp"
-
-                android:src="@drawable/ic_washing_machine" />
+                android:src="@drawable/ic_washing_machine"
+                android:tint="@color/colorBlueGray"/>
 
             <TextView
                 android:id="@+id/tv_status"
@@ -55,10 +55,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/tv_status"
-                android:layout_alignLeft="@+id/tv_real_time"
-                android:layout_alignStart="@+id/tv_real_time"
-                android:layout_toEndOf="@+id/tv_status"
-                android:layout_toRightOf="@+id/tv_status"
+                android:layout_alignRight="@+id/tv_show_minute"
+                android:layout_alignEnd="@+id/tv_show_minute"
                 android:text="@string/blank"
                 android:textColor="@color/colorBlueGray"
                 android:textSize="18sp" />
@@ -87,7 +85,9 @@
                 android:layout_toStartOf="@+id/tv_show_minute"
                 android:text="@string/_default"
                 android:textColor="@color/colorBlueGray"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"/>
 
             <TextView
                 android:id="@+id/tv_show_minute"
@@ -127,8 +127,8 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_alignBottom="@+id/tv_switch"
-                android:layout_alignLeft="@+id/tv_real_status"
-                android:layout_alignStart="@+id/tv_real_status">
+                android:layout_alignRight="@+id/tv_real_status"
+                android:layout_alignEnd="@+id/tv_real_status">
 
             </add.project.micro.co.th.projectmicroprocessor.SettingsToggle>
 
