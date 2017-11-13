@@ -71,8 +71,8 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
 
         //get a pixel size for a particular dimension - will differ by device according to screen density
         dimen = resources.getDimensionPixelSize(R.dimen.settings_toggle_width)
-        _oaLeft = ObjectAnimator.ofFloat(toggleCircle, "x", 44f, 0f).setDuration(250)
-        _oaRight = ObjectAnimator.ofFloat(toggleCircle, "x", 0f,44f ).setDuration(250)
+        _oaLeft = ObjectAnimator.ofFloat(toggleCircle, "x", (dimen/2).toFloat(), 0f).setDuration(250)
+        _oaRight = ObjectAnimator.ofFloat(toggleCircle, "x", 0f,(dimen/2).toFloat() ).setDuration(250)
 
         _sp = context.getSharedPreferences(context.getString(R.string.summit), Context.MODE_PRIVATE)
 

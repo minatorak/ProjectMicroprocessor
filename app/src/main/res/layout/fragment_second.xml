@@ -127,8 +127,8 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_alignBottom="@+id/tv_switch"
-                android:layout_alignEnd="@+id/tv_show_minute"
-                android:layout_alignRight="@+id/tv_show_minute">
+                android:layout_alignLeft="@+id/tv_real_status"
+                android:layout_alignStart="@+id/tv_real_status">
 
             </add.project.micro.co.th.projectmicroprocessor.SettingsToggle>
 
