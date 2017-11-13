@@ -79,8 +79,12 @@ class SecondFragment : Fragment() {
     private fun dataStatus() {
         statusR.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val statusData = dataSnapshot.child("running").value
-                if (statusData.toString().equals("0") ) {
+                val statusData = dataSnapshot.child("running").getValue(Int::class.java)
+                val powerData = dataSnapshot.child("power").getValue(Int::class.java)
+                if (powerData == 0 ) {
+                    imageView.setColorFilter(ContextCompat.getColor(context, R.color.colorBlueGray))
+                    status.text = "เครื่องปิด"
+                }else if (powerData == 1 && statusData == 0 ) {
                     try {
                         imageView.setColorFilter(ContextCompat.getColor(context, R.color.green))
                         status.text = getString(R.string.Blank)
@@ -88,7 +92,7 @@ class SecondFragment : Fragment() {
 
                     }
 
-                }else {
+                }else if (powerData == 1 && statusData ==1){
                     try {
                         imageView.setColorFilter(ContextCompat.getColor(context, R.color.red))
                         status.text = getString(R.string.isRunning)
