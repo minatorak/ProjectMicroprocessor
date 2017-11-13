@@ -10,6 +10,7 @@ import android.support.annotation.Nullable
 import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +21,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.iid.FirebaseInstanceId
 
 
 class SecondFragment : Fragment() {
@@ -64,12 +66,7 @@ class SecondFragment : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val count = dataSnapshot.child("countDown").getValue(Int::class.java)
                 leftTime.text = count.toString()
-//                if (leftTime.text == "0") {
-//                    val intent = Intent(ACTION_CHANNEL_NOTIFICATION_SETTINGS)
-//                    intent.putExtra(Settings.EXTRA_CHANNEL_ID, mChannel.getId())
-//                    intent.putExtra(Settings.EXTRA_APP_PACKAGE, getPackageName())
-//                    startActivity(intent)
-//                }
+
 
             }
 
