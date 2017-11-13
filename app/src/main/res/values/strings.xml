@@ -32,4 +32,7 @@
     <string name="blank">ว่าง</string>
     <string name="washing_status">สถานะเครื่องซักผ้า</string>
     <string name="dot">:</string>
+    <string name="turn_off">เครื่องปิด</string>
+    <string name="please_put_email">กรุณากรอก E-mail ของท่าน</string>
+    <string name="save_sucess">ทำการบันทึกสำเร็จ</string>
 </resources>

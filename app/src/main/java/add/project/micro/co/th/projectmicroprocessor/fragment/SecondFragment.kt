@@ -50,10 +50,10 @@ class SecondFragment : Fragment() {
     private fun setEmail() {
         btnSummit.setOnClickListener {
             if (edtMail.length() == 0 ) {
-                Toast.makeText(context, "กรุณากรอก E-mail ของท่าน", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, getString(R.string.please_put_email), Toast.LENGTH_LONG).show()
             } else if (edtMail.length() != 0){
                 baseR.child("Noti").child("Email").setValue(edtMail.text.toString())
-                Toast.makeText(context, "ทำการบันทึกสำเร็จ", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, getString(R.string.save_sucess), Toast.LENGTH_LONG).show()
             }
             edtMail.setText("")
         }
@@ -84,7 +84,7 @@ class SecondFragment : Fragment() {
                 if (powerData == 0 ) {
                     try {
                         imageView.setColorFilter(ContextCompat.getColor(context, R.color.colorBlueGray))
-                        status.text = "เครื่องปิด"
+                        status.text = getString(R.string.turn_off)
                     }catch (e : NullPointerException) {
 
                     }
