@@ -85,6 +85,8 @@ class SecondFragment : Fragment() {
                     try {
                         imageView.setColorFilter(ContextCompat.getColor(context, R.color.colorBlueGray))
                         status.text = getString(R.string.turn_off)
+                        val str = FirebaseInstanceId.getInstance().token
+                        Log.d("TOKEN","$str")
                     }catch (e : NullPointerException) {
 
                     }
