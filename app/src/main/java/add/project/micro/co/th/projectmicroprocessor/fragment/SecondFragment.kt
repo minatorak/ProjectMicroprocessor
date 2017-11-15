@@ -28,7 +28,6 @@ class SecondFragment : Fragment() {
     var baseR = FirebaseDatabase.getInstance().getReference()
     var logR = baseR.child("log")
     var statusR = baseR.child("status")
-    var notiR = baseR.child("Noti")
     @Nullable @BindView(R.id.image_washing) lateinit var imageView  : ImageView
     @Nullable @BindView(R.id.tv_real_time) lateinit var leftTime: TextView
     @Nullable @BindView(R.id.tv_real_status) lateinit var status: TextView
@@ -81,16 +80,18 @@ class SecondFragment : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val statusData = dataSnapshot.child("running").getValue(Int::class.java)
                 val powerData = dataSnapshot.child("power").getValue(Int::class.java)
-                if (powerData == 0 ) {
+                val turnOff = 0
+                val turnOn = 1
+                val idle = 0
+                val working = 1
+                if (powerData == turnOff ) {
                     try {
                         imageView.setColorFilter(ContextCompat.getColor(context, R.color.colorBlueGray))
                         status.text = getString(R.string.turn_off)
-                        val str = FirebaseInstanceId.getInstance().token
-                        Log.d("TOKEN","$str")
                     }catch (e : NullPointerException) {
 
                     }
-                }else if (powerData == 1 && statusData == 0 ) {
+                }else if (powerData == turnOn && statusData == idle ) {
                     try {
                         imageView.setColorFilter(ContextCompat.getColor(context, R.color.green))
                         status.text = getString(R.string.Blank)
@@ -98,7 +99,7 @@ class SecondFragment : Fragment() {
 
                     }
 
-                }else if (powerData == 1 && statusData ==1){
+                }else if (powerData == turnOn && statusData == working){
                     try {
                         imageView.setColorFilter(ContextCompat.getColor(context, R.color.red))
                         status.text = getString(R.string.isRunning)
