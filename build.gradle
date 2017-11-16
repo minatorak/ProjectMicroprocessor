@@ -20,6 +20,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
     }
 }
 
@@ -27,6 +30,6 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 ext {
-    supportLibraryVersion = "26.1.0"
-    butterKnifeVersion = "8.0.1"
+    supportLibraryVersion = "27.0.1"
+    butterKnifeVersion = "8.8.1"
 }
