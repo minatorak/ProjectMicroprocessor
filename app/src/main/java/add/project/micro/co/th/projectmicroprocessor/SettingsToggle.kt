@@ -20,7 +20,6 @@ import com.google.firebase.database.FirebaseDatabase
 @Suppress("DEPRECATION")
 class SettingsToggle : RelativeLayout, View.OnClickListener {
     val baseR = FirebaseDatabase.getInstance().getReference()
-    val statusPower = baseR.child("status")
     internal lateinit var layout: FrameLayout
     internal lateinit var toggleCircle: View
     internal lateinit var background_oval_off: View
