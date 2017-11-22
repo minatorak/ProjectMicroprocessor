@@ -21,7 +21,7 @@ class MessagingReceiver : FirebaseMessagingService() {
 
     private fun createNotification(remoteMessage: RemoteMessage) {
         val notificationPayload = remoteMessage.notification
-        val dataPayload = remoteMessage.data
+//        val dataPayload = remoteMessage.data
 
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val intent = Intent(this, MainActivity::class.java)

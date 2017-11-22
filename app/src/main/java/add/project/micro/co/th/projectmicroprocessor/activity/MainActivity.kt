@@ -38,12 +38,12 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, FirstFragment.newInstance())
                 .commit()
     }
-    fun changeFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.container, FirstFragment.newInstance())
-                .addToBackStack(null)
-                .commit()
-    }
+//    fun changeFragment(fragment: Fragment) {
+//        supportFragmentManager.beginTransaction()
+//                .replace(R.id.container, FirstFragment.newInstance())
+//                .addToBackStack(null)
+//                .commit()
+//    }
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             android.R.id.home -> onBackPressed()
