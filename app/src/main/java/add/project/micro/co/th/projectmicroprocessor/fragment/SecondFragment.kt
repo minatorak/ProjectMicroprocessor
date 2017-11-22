@@ -86,14 +86,14 @@ class SecondFragment : Fragment() {
                 val working = 1
                 if (powerData == turnOff ) {
                     try {
-                        imageView.setColorFilter(ContextCompat.getColor(context, R.color.colorBlueGray))
+                        imageView.setColorFilter(ContextCompat.getColor(context!!, R.color.colorBlueGray))
                         status.text = getString(R.string.turn_off)
                     }catch (e : NullPointerException) {
 
                     }
                 }else if (powerData == turnOn && statusData == idle ) {
                     try {
-                        imageView.setColorFilter(ContextCompat.getColor(context, R.color.green))
+                        imageView.setColorFilter(ContextCompat.getColor(context!!, R.color.green))
                         status.text = getString(R.string.Blank)
                     }catch (e: NullPointerException) {
 
@@ -101,7 +101,7 @@ class SecondFragment : Fragment() {
 
                 }else if (powerData == turnOn && statusData == working){
                     try {
-                        imageView.setColorFilter(ContextCompat.getColor(context, R.color.red))
+                        imageView.setColorFilter(ContextCompat.getColor(context!!, R.color.red))
                         status.text = getString(R.string.isRunning)
 
                     }catch (e: NullPointerException) {

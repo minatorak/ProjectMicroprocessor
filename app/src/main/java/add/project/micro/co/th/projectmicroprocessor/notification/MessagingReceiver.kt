@@ -5,14 +5,12 @@ import android.app.Notification
 import android.graphics.Color
 import android.media.RingtoneManager
 import android.support.v4.app.NotificationManagerCompat
-import android.support.v7.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import android.app.PendingIntent
 import android.content.Intent
 import add.project.micro.co.th.projectmicroprocessor.activity.MainActivity
-
-
+import android.support.v4.app.NotificationCompat
 
 
 class MessagingReceiver : FirebaseMessagingService() {
@@ -34,15 +32,15 @@ class MessagingReceiver : FirebaseMessagingService() {
         @Suppress("DEPRECATION")
         val notificationBuilder = NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_washing_machine)
-                .setContentTitle(notificationPayload.title)
-                .setContentText(notificationPayload.body)
+                .setContentTitle(notificationPayload?.title)
+                .setContentText(notificationPayload?.body)
                 .setAutoCancel(true)
                 .setColor(Color.parseColor("#00a3dc"))
                 .setLights(Color.RED, 1000, 300)
                 .setDefaults(Notification.DEFAULT_VIBRATE)
                 .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent)
-                .setContentInfo(notificationPayload.title)
+                .setContentInfo(notificationPayload?.title)
 
         val notificationManager = NotificationManagerCompat.from(applicationContext)
         notificationManager.notify(123, notificationBuilder.build())

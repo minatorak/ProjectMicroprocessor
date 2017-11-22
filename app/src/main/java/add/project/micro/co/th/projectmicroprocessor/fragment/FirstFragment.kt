@@ -4,6 +4,7 @@ package add.project.micro.co.th.projectmicroprocessor.fragment
 import add.project.micro.co.th.projectmicroprocessor.recyclerview.MyAdapter
 import add.project.micro.co.th.projectmicroprocessor.R
 import add.project.micro.co.th.projectmicroprocessor.activity.MainActivity
+import android.content.Context
 import android.os.Bundle
 import android.support.annotation.NonNull
 import android.support.v4.app.Fragment
@@ -48,7 +49,7 @@ class FirstFragment : Fragment() {
     }
 
     private fun recyclerViewAdapter() {
-        adapter = MyAdapter(context, imgShow.toIntArray(), tusView, arrow.toIntArray())
+        adapter = MyAdapter(context!!, imgShow.toIntArray(), tusView, arrow.toIntArray())
         val mLayoutManager = LinearLayoutManager(context)
         rv.layoutManager = mLayoutManager
         rv.itemAnimator = DefaultItemAnimator()
