@@ -5,7 +5,6 @@ import add.project.micro.co.th.projectmicroprocessor.fragment.FirstFragment
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.annotation.Nullable
-import android.support.v4.app.Fragment
 import android.support.v7.widget.Toolbar
 import android.widget.TextView
 import butterknife.BindView
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         ButterKnife.bind(this)
         setToolBar()
-        initFragment()
+        inItFragment()
 
     }
 
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         tvTopic.text = getString(R.string.washingmachine)
     }
 
-    fun initFragment() {
+    private fun inItFragment() {
         supportFragmentManager.beginTransaction()
                 .replace(R.id.container, FirstFragment.newInstance())
                 .commit()
