@@ -117,13 +117,4 @@ class SecondFragment : Fragment() {
     private fun getMainActivity(): MainActivity { return activity as MainActivity
     }
 
-    companion   object {
-        fun newInstance(): SecondFragment {
-            val bundle = Bundle()
-            val fragment = SecondFragment()
-            fragment.arguments = bundle
-            return fragment
-        }
-    }
-
 }
