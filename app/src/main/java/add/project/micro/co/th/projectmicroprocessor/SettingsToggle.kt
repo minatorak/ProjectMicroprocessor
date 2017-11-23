@@ -68,7 +68,6 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
         if (textColor != null) textView.setTextColor(Color.parseColor(textColor))
         layout.setOnClickListener(this)
 
-        //get a pixel size for a particular dimension - will differ by device according to screen density
         dimen = resources.getDimensionPixelSize(R.dimen.settings_toggle_width)
         _oaLeft = ObjectAnimator.ofFloat(toggleCircle, "x", (dimen/2).toFloat(), 0f).setDuration(250)
         _oaRight = ObjectAnimator.ofFloat(toggleCircle, "x", 0f,(dimen/2).toFloat() ).setDuration(250)
@@ -80,9 +79,6 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
-    }
 
     override fun onClick(view: View) {
 
@@ -102,18 +98,6 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
 
         editor.putBoolean(_prefName, !pref)
         editor.apply()
-    }
-
-    fun setState() {
-        if (isInEditMode) return  //isInEditMode(): if being rendered in IDE preview, skip code that will break
-
-        if (_sp!!.getBoolean(_prefName, false)) {
-            toggleCircle.x = (dimen / 2).toFloat()
-            _crossfadeViews(background_oval_off, background_oval_on, 1)
-        } else {
-            toggleCircle.x = 0f
-            _crossfadeViews(background_oval_on, background_oval_off, 1)
-        }
     }
 
     private fun _crossfadeViews(begin: View, end: View, duration: Int) {
