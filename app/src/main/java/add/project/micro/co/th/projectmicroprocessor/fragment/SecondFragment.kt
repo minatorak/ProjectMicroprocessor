@@ -84,37 +84,41 @@ class SecondFragment : Fragment() {
                 val turnOn = 1
                 val idle = 0
                 val working = 1
-                if (powerData == turnOff ) {
-                    try {
-                        imageView.setColorFilter(ContextCompat.getColor(context!!, R.color.colorBlueGray))
-                        status.text = getString(R.string.turn_off)
-                    }catch (e : NullPointerException) {
-
-                    }
-                }else if (powerData == turnOn && statusData == idle ) {
-                    try {
-                        imageView.setColorFilter(ContextCompat.getColor(context!!, R.color.green))
-                        status.text = getString(R.string.Blank)
-                    }catch (e: NullPointerException) {
-
-                    }
-
-                }else if (powerData == turnOn && statusData == working){
-                    try {
-                        imageView.setColorFilter(ContextCompat.getColor(context!!, R.color.red))
-                        status.text = getString(R.string.isRunning)
-
-                    }catch (e: NullPointerException) {
-
-                    }
-                }
+                statusShow(powerData, turnOff, turnOn, statusData, idle, working)
 
             }
             override fun onCancelled(error: DatabaseError) {
             }
         })
         }
-    private fun getMainActivity(): MainActivity { return activity as MainActivity
+
+    private fun statusShow(powerData: Int?, turnOff: Int, turnOn: Int, statusData: Int?, idle: Int, working: Int) {
+        if (powerData == turnOff) {
+            try {
+                imageView.setColorFilter(ContextCompat.getColor(context!!, R.color.colorBlueGray))
+                status.text = getString(R.string.turn_off)
+            } catch (e: NullPointerException) {
+
+            }
+        } else if (powerData == turnOn && statusData == idle) {
+            try {
+                imageView.setColorFilter(ContextCompat.getColor(context!!, R.color.green))
+                status.text = getString(R.string.Blank)
+            } catch (e: NullPointerException) {
+
+            }
+
+        } else if (powerData == turnOn && statusData == working) {
+            try {
+                imageView.setColorFilter(ContextCompat.getColor(context!!, R.color.red))
+                status.text = getString(R.string.isRunning)
+
+            } catch (e: NullPointerException) {
+
+            }
+        }
     }
+
+    private fun getMainActivity(): MainActivity { return activity as MainActivity }
 
 }
