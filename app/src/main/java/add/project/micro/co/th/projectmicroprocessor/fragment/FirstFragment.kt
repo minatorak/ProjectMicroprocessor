@@ -43,8 +43,7 @@ class FirstFragment : Fragment() {
         ButterKnife.bind(this,view)
             recyclerViewAdapter()
             getMainActivity().supportActionBar?.hide()
-        dataTemp()
-
+            dataTemp()
         return view
     }
 
@@ -56,8 +55,7 @@ class FirstFragment : Fragment() {
         rv.adapter = adapter
     }
 
-    fun getMainActivity(): MainActivity { return activity as MainActivity
-    }
+    fun getMainActivity(): MainActivity { return activity as MainActivity }
 
     private fun dataTemp() {
         tempR.addValueEventListener(object : ValueEventListener {

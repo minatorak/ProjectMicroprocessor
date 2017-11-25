@@ -48,9 +48,10 @@ class SecondFragment : Fragment() {
 
     private fun setEmail() {
         btnSummit.setOnClickListener {
-            if (edtMail.length() == 0 ) {
+            val isnull = 0
+            if (edtMail.length() == isnull) {
                 Toast.makeText(context, getString(R.string.please_put_email), Toast.LENGTH_LONG).show()
-            } else if (edtMail.length() != 0){
+            } else if (edtMail.length() != isnull){
                 baseR.child("Noti").child("Email").setValue(edtMail.text.toString())
                 Toast.makeText(context, getString(R.string.save_sucess), Toast.LENGTH_LONG).show()
             }
@@ -65,7 +66,6 @@ class SecondFragment : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val count = dataSnapshot.child("countDown").getValue(Int::class.java)
                 leftTime.text = count.toString()
-
 
             }
 
