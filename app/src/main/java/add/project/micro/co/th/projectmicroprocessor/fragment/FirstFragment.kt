@@ -41,9 +41,9 @@ class FirstFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_first, container, false)
         ButterKnife.bind(this,view)
-            recyclerViewAdapter()
-            getMainActivity().supportActionBar?.hide()
-            dataTemp()
+        recyclerViewAdapter()
+        getMainActivity().supportActionBar?.hide()
+        dataTemp()
         return view
     }
 
