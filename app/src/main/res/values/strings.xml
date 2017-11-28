@@ -35,4 +35,5 @@
     <string name="turn_off">เครื่องปิด</string>
     <string name="please_put_email">กรุณากรอก E-mail ของท่าน</string>
     <string name="save_sucess">ทำการบันทึกสำเร็จ</string>
+    <string name="isBlank">""</string>
 </resources>

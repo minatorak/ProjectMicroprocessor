@@ -10,7 +10,6 @@ import android.support.annotation.Nullable
 import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +20,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.iid.FirebaseInstanceId
 
 
 class SecondFragment : Fragment() {
@@ -55,7 +53,7 @@ class SecondFragment : Fragment() {
                 baseR.child("Noti").child("Email").setValue(edtMail.text.toString())
                 Toast.makeText(context, getString(R.string.save_sucess), Toast.LENGTH_LONG).show()
             }
-            edtMail.setText("")
+            edtMail.setText(getString(R.string.isBlank))
         }
     }
 
