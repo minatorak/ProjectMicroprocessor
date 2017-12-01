@@ -19,13 +19,13 @@ import com.google.firebase.database.FirebaseDatabase
 
 @Suppress("DEPRECATION")
 class SettingsToggle : RelativeLayout, View.OnClickListener {
-    val baseR = FirebaseDatabase.getInstance().reference
-    internal lateinit var layout: FrameLayout
-    internal lateinit var toggleCircle: View
-    internal lateinit var background_oval_off: View
-    internal lateinit var background_oval_on: View
-    internal lateinit var textView: TextView
-    internal  var dimen: Int = 0
+    private val baseR = FirebaseDatabase.getInstance().reference
+    private lateinit var layout: FrameLayout
+    private lateinit var toggleCircle: View
+    private lateinit var background_oval_off: View
+    private lateinit var background_oval_on: View
+    private lateinit var textView: TextView
+    private var dimen: Int = 0
 
     private var _crossfadeRunning: Boolean? = false
     private var _sp: SharedPreferences? = null
@@ -70,7 +70,7 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
 
         dimen = resources.getDimensionPixelSize(R.dimen.settings_toggle_width)
         _oaLeft = ObjectAnimator.ofFloat(toggleCircle, "x", (dimen/2).toFloat(), 0f).setDuration(250)
-        _oaRight = ObjectAnimator.ofFloat(toggleCircle, "x", 0f,(dimen/2).toFloat() ).setDuration(250)
+        _oaRight = ObjectAnimator.ofFloat(toggleCircle, "x", 0f,(dimen/2).toFloat()).setDuration(250)
 
         _sp = context.getSharedPreferences(context.getString(R.string.summit), Context.MODE_PRIVATE)
 
