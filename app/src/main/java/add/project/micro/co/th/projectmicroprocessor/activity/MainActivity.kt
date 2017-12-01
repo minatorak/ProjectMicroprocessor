@@ -13,7 +13,7 @@ import android.view.MenuItem
 
 
 class MainActivity : AppCompatActivity() {
-    @Nullable @BindView(R.id.toolbar) lateinit var Mytoolbar : Toolbar
+    @Nullable @BindView(R.id.toolbar) lateinit var isToolbar: Toolbar
     @Nullable @BindView(R.id.tv_toolbar_title) lateinit var tvTopic : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setToolBar() {
-        setSupportActionBar(Mytoolbar)
+        setSupportActionBar(isToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
