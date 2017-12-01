@@ -22,8 +22,8 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
     private val baseR = FirebaseDatabase.getInstance().reference
     private lateinit var layout: FrameLayout
     private lateinit var toggleCircle: View
-    private lateinit var background_oval_off: View
-    private lateinit var background_oval_on: View
+    private lateinit var backGroundOvalOff: View
+    private lateinit var backGroundOvalOn: View
     private lateinit var textView: TextView
     private var dimen: Int = 0
 
@@ -50,18 +50,18 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
         text = a.getString(R.styleable.SettingsToggle_text)
         textColor = a.getString(R.styleable.SettingsToggle_textColor)
         a.recycle()
-        background_oval_off = findViewById(R.id.background_oval_off)
-        background_oval_on = findViewById(R.id.background_oval_on)
+        backGroundOvalOff = findViewById(R.id.backGroundOvalOff)
+        backGroundOvalOn = findViewById(R.id.backGroundOvalOn)
         toggleCircle = findViewById(R.id.toggleCircle)
         textView = findViewById<View>(R.id.text) as TextView
         layout = findViewById<View>(R.id.layout) as FrameLayout
         if (bgDrawableOff != null) {
             val id = resources.getIdentifier(bgDrawableOff, "drawable", context.packageName)
-            background_oval_off.background = resources.getDrawable(id)
+            backGroundOvalOff.background = resources.getDrawable(id)
         }
         if (bgDrawableOn != null) {
             val id = resources.getIdentifier(bgDrawableOn, "drawable", context.packageName)
-            background_oval_on.background = resources.getDrawable(id)
+            backGroundOvalOn.background = resources.getDrawable(id)
         }
 
         textView.text = text
@@ -77,7 +77,7 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
     }
 
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
 
     override fun onClick(view: View) {
@@ -88,11 +88,11 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
         val pref = _sp!!.getBoolean(_prefName, false)
         if (pref) {
             _oaLeft!!.start()
-            _crossfadeViews(background_oval_on, background_oval_off, 110)
+            crossFadeViews(backGroundOvalOn, backGroundOvalOff, 110)
             baseR.child("status").child("power").setValue(0)
         } else {
             _oaRight!!.start()
-            _crossfadeViews(background_oval_off, background_oval_on, 400)
+            crossFadeViews(backGroundOvalOff, backGroundOvalOn, 400)
             baseR.child("status").child("power").setValue(1)
         }
 
@@ -100,7 +100,7 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
         editor.apply()
     }
 
-    private fun _crossfadeViews(begin: View, end: View, duration: Int) {
+    private fun crossFadeViews(begin: View, end: View, duration: Int) {
         _crossfadeRunning = true
 
         end.alpha = 0f
