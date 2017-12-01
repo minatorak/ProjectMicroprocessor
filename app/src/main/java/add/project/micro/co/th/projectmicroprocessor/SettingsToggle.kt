@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase
 
 @Suppress("DEPRECATION")
 class SettingsToggle : RelativeLayout, View.OnClickListener {
-    val baseR = FirebaseDatabase.getInstance().getReference()
+    val baseR = FirebaseDatabase.getInstance().reference
     internal lateinit var layout: FrameLayout
     internal lateinit var toggleCircle: View
     internal lateinit var background_oval_off: View
@@ -33,7 +33,7 @@ class SettingsToggle : RelativeLayout, View.OnClickListener {
     private var _oaRight: ObjectAnimator? = null
     private var _prefName: String? = null
 
-    constructor(context: Context) : super(context) {}
+    constructor(context: Context) : super(context)
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
