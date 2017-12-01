@@ -23,9 +23,9 @@ import com.google.firebase.database.ValueEventListener
 
 
 class SecondFragment : Fragment() {
-    var baseR = FirebaseDatabase.getInstance().getReference()
-    var logR = baseR.child("log")
-    var statusR = baseR.child("status")
+    private var baseR = FirebaseDatabase.getInstance().reference
+    private var logR = baseR.child("log")
+    private var statusR = baseR.child("status")
     @Nullable @BindView(R.id.image_washing) lateinit var imageView  : ImageView
     @Nullable @BindView(R.id.tv_real_time) lateinit var leftTime: TextView
     @Nullable @BindView(R.id.tv_real_status) lateinit var status: TextView

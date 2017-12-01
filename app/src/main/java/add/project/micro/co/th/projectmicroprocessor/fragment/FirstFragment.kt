@@ -24,12 +24,12 @@ import com.google.firebase.database.ValueEventListener
 
 
 class FirstFragment : Fragment() {
-    val imgShow = arrayOf(R.drawable.ic_washing_machine)
-    val tusView = arrayOf("Washing Machine")
-    val arrow = arrayOf(R.drawable.ic_arrow_right)
+    private val imgShow = arrayOf(R.drawable.ic_washing_machine)
+    private val tusView = arrayOf("Washing Machine")
+    private val arrow = arrayOf(R.drawable.ic_arrow_right)
     private lateinit var adapter: MyAdapter
-    var baseR = FirebaseDatabase.getInstance().getReference()
-    var tempR = baseR.child("Temp")
+    private var baseR = FirebaseDatabase.getInstance().reference
+    private var tempR = baseR.child("Temp")
     @NonNull @BindView(R.id.myrecycler) lateinit var rv : RecyclerView
     @NonNull @BindView(R.id.tv_real_celsius) lateinit var tvCelsius : TextView
     @NonNull @BindView(R.id.tv_real_humdity) lateinit var tvHumidity : TextView
@@ -54,7 +54,7 @@ class FirstFragment : Fragment() {
         rv.adapter = adapter
     }
 
-    fun getMainActivity(): MainActivity { return activity as MainActivity }
+    private fun getMainActivity(): MainActivity { return activity as MainActivity }
 
     private fun dataTemp() {
         tempR.addValueEventListener(object : ValueEventListener {
@@ -80,7 +80,7 @@ class FirstFragment : Fragment() {
             tvTellStatus.text = getString(R.string.sunWeather)
             tvTellWeather.text = getString(R.string.goodTime)
             imageWeather.setImageResource(R.drawable.ic_weather)
-        } else if (celsius >= 25 && celsius <= 30 && humidity!! >= 70 && humidity <= 84) {
+        } else if (celsius in 25..30 && humidity!! in 70..84) {
             tvTellStatus.text = getString(R.string.clound_so_much)
             tvTellWeather.text = getString(R.string.dangerus)
             imageWeather.setImageResource(R.drawable.ic_rain_clound)
