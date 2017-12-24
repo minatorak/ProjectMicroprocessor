@@ -23,7 +23,7 @@
                 android:layout_marginBottom="12dp"
                 android:layout_marginTop="16dp"
                 android:src="@drawable/ic_washing_machine"
-                android:tint="@color/colorBlueGray"/>
+                android:tint="@color/colorBlueGray" />
 
             <TextView
                 android:id="@+id/tv_status"
@@ -150,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_please_put_e_mail"
                 android:layout_marginTop="8dp"
-                android:imeOptions="actionNext"/>
+                android:imeOptions="actionNext" />
 
             <Button
                 android:id="@+id/btn_summit"
