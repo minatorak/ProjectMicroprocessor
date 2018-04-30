@@ -4,17 +4,12 @@ import add.project.micro.co.th.projectmicroprocessor.R
 import add.project.micro.co.th.projectmicroprocessor.fragment.FirstFragment
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.annotation.Nullable
-import android.support.v7.widget.Toolbar
-import android.widget.TextView
-import butterknife.BindView
 import butterknife.ButterKnife
 import android.view.MenuItem
+import kotlinx.android.synthetic.main.z_tool_bar.*
 
 
 class MainActivity : AppCompatActivity() {
-    @Nullable @BindView(R.id.toolbar) lateinit var isToolbar: Toolbar
-    @Nullable @BindView(R.id.tv_toolbar_title) lateinit var tvTopic : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,11 +20,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setToolBar() {
-        setSupportActionBar(isToolbar)
+        setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        tvTopic.text = getString(R.string.washingmachine)
+        tv_toolbar_title.text = getString(R.string.washingmachine)
     }
 
     private fun inItFragment() {
