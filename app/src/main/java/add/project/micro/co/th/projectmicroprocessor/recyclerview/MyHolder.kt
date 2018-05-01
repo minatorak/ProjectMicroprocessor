@@ -9,15 +9,12 @@ import add.project.micro.co.th.projectmicroprocessor.R
 
 
 class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-    var image: ImageView
-    var statusView: TextView
-    var arrowRight: ImageView
+    var image: ImageView = itemView.findViewById(R.id.im_machine)
+    var statusView: TextView = itemView.findViewById(R.id.tv_status_first)
+    var arrowRight: ImageView = itemView.findViewById(R.id.im_ic_arrow_right)
     private var itemClickListener: ItemClickListener? = null
 
     init {
-        image = itemView.findViewById(R.id.im_machine)
-        statusView = itemView.findViewById(R.id.tv_status_first)
-        arrowRight = itemView.findViewById(R.id.im_ic_arrow_right)
 
         itemView.setOnClickListener(this)
 
